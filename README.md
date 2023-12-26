@@ -17,5 +17,5 @@ Runs the app in the development mode.\
 Open [http://localhost:6868](http://localhost:6868) to view it in the browser.
 
 ## Links:
-- Tesnet: viction.eggforce.io
+- Tesnet: https://viction.eggforce.io
 - Pitch Desk: https://www.canva.com/design/DAF2SUxoZ3E/ObsHqdPmqeSKhEzHR4f_PA/view?utm_content=DAF2SUxoZ3E&utm_campaign=designshare&utm_medium=link&utm_source=editor
