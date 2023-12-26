@@ -1,0 +1,62 @@
+.happy-hour-countdown {
+  margin-bottom: 24px;
+
+  .time-note {
+    @include fz(14);
+    background-color: rgba($modalBackground, 0.5);
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+}
+
+.happy-hour-countdown--wrapper {
+  @extend .font2;
+  position: relative;
+  width: 70%;
+  column-gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 24px 0 0;
+  color: #fff;
+  overflow: hidden;
+  font-weight: bold;
+
+  .block {
+    @include fz(86);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 25%;
+    // font-size: 6vw;
+    text-align: center;
+
+    .label {
+      margin-top: 6px;
+      font-size: 18px;
+      font-size: 1.4vw;
+      text-transform: uppercase;
+    }
+  }
+
+  .number {
+    @include size(120px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      to top,
+      rgb(245 220 109) 0%,
+      rgb(233 114 92) 100%
+    );
+
+    .value {
+      @include textShadow03;
+      height: 110px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.option-item {
+  &--root {
+    margin-bottom: 0.5rem;
+
+    &.is-horizontal {
+      @include flexRow;
+      align-items: center;
+    }
+
+    &.is-vertical {
+      @include flexCol;
+      align-items: center;
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      color: rgba($color01, 0.35);
+
+      .img {
+        @extend %animate;
+        filter: grayscale(1);
+      }
+
+      &.is-invalid-status {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+
+    &.is-dragging {
+      opacity: 0.4;
+    }
+
+    &.is-leaderboard-item {
+      .option-item--text {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &--thumbnail {
+    @include size(54px);
+    border-radius: 16px;
+
+    @at-root .is-horizontal & {
+      margin-right: 0.5rem;
+    }
+
+    @at-root .is-vertical & {
+      margin-bottom: 0.125rem;
+    }
+
+    &.is-inactive {
+      background-color: $color06;
+    }
+
+    .img {
+      display: block;
+      max-width: 100%;
+    }
+
+    @at-root .is-egg-nft & {
+      @include posr;
+      @include size(100px);
+      @include generateNFTElementBackground();
+      @extend %animate;
+      border: 3px solid $color17;
+      border-radius: 12px;
+      cursor: grab;
+
+      .img {
+        transform: scale(1.25);
+      }
+    }
+
+    @at-root .is-egg-nft.on-placeholder & {
+      border-color: transparent;
+    }
+  }
+
+  &--text {
+    @include fz(13);
+    font-weight: 600;
+  }
+}

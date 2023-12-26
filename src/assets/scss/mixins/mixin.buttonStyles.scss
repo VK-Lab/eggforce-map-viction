@@ -1,0 +1,48 @@
+@mixin generateButtonShadow(
+  $shadow1,
+  $shadow2,
+  $shadow3,
+  $shadow4,
+  $shadow5,
+  $borderBottom
+) {
+  box-shadow: 0px 1px 0 0px $shadow1, -1px 3px 2px 2px $shadow2,
+    0px 4px 1px 4px $shadow3, 1px 3px 3px 4px $shadow4, 1px 3px 1px 4px $shadow5,
+    0px 7px 3px 5px rgba(0, 0, 0, 0.3);
+  border-bottom: 5px solid $borderBottom;
+  border-top: 1px solid rgb(255 255 255 / 65%);
+
+  &:hover {
+    transform: translateY(2px);
+    color: #fff;
+    box-shadow: 0px 1px 0 0px $shadow1, -1px 1px 2px 2px $shadow2,
+      0px 2px 1px 4px $shadow3, 1px 1px 3px 4px $shadow4,
+      1px 1px 1px 4px $shadow5, 0px 5px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin generateDisabledStateButton {
+  &[disabled],
+  &.disabled {
+    background: rgb(128 128 128);
+    cursor: not-allowed;
+    color: $color18;
+
+    @include generateButtonShadow(
+      rgb(93, 93, 93),
+      rgb(91, 91, 91),
+      rgb(128 128 128),
+      rgb(91, 91, 91),
+      rgb(110, 110, 110),
+      rgb(128 128 128)
+    );
+
+    &.sz-small {
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.profile-badge {
+  &--wrapper {
+    @extend %posr;
+    display: block;
+    cursor: pointer;
+
+    &.option-item--thumbnail {
+      @include size(44px);
+    }
+  }
+
+  &--primary-image {
+    max-width: 100%;
+    padding: 5px;
+    background-image: radial-gradient(
+      ellipse farthest-corner at center top,
+      #dfc688 0%,
+      #422b24 100%
+    );
+    border-radius: 50%;
+    box-shadow: $bs01;
+
+    &.for--leaderboard {
+      padding: 3px;
+      min-width: 44px;
+    }
+  }
+}

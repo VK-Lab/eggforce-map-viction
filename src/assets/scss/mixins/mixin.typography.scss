@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@300;400&display=swap');
+
+@mixin setOnlyFontSize($fontsize) {
+  font-size: ($fontsize) + px;
+  font-size: calc($fontsize / 16) + rem;
+}
+
+@mixin fz($fontsize) {
+  @include setOnlyFontSize($fontsize);
+}
+
+@mixin font1 {
+  font-family: $font1;
+}
+
+@mixin font2 {
+  font-family: $font2;
+  letter-spacing: -0.5px;
+}
+
+@mixin font3 {
+  font-family: $font3;
+}
+
+@mixin textGradient {
+  background: linear-gradient(90.32deg, #F9F871 0.28%, #EA735D 72.8%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.font1 {
+  @include font1;
+}
+
+.font2 {
+  @include font2;
+}
+
+.font3 {
+  @include font3;
+}
+
+.text-gradient {
+  @include textGradient();
+}

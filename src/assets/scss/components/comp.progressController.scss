@@ -1,0 +1,63 @@
+.gprogress {
+  &--root {
+    @include fz(14);
+  }
+  &--header {
+    @include flexRow;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+
+    .box--right,
+    .btn--actions-wrapper {
+      margin-left: auto;
+    }
+  }
+
+  &--body {
+    @extend %posr;
+    background-color: #53555a; // $color17;
+    border-radius: 24px;
+    height: 12px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+
+  &-footer {
+    &--content {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &__left {
+      }
+
+      &__right {
+        margin-left: auto;
+      }
+    }
+  }
+  &-slide {
+    @extend %animate;
+    animation: move 6s linear infinite;
+    background: linear-gradient(90deg, #ea735d 0%, #f9f871 142.2%);
+    background-size: 100% 100%;
+    border-radius: 24px;
+    height: 100%;
+
+    &.inverted {
+      background: linear-gradient(126.64deg, $color08 12.35%, $color06 93.23%);
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

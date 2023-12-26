@@ -1,0 +1,545 @@
+.nft-grid {
+  &--container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem 0;
+
+    .column {
+      flex: 0 0 auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      width: 100%;
+
+      @include media-min(600) {
+        width: calc(100% / 2);
+      }
+
+      @include media-min(960) {
+        width: calc(100% / 3);
+      }
+
+      @include media-min(1480) {
+        width: calc(100% / 4);
+      }
+
+      @include media-min(2056) {
+        width: calc(100% / 5);
+      }
+    }
+  }
+}
+
+.nft-grid-item {
+  &--root {
+    @extend %posr;
+    @extend %animate;
+    background-color: $color19;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    box-shadow: 7px 8px 18px 0px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    display: flex;
+    flex-flow: column nowrap;
+
+    &.fullHeight {
+      height: 100%;
+      max-height: 500px;
+    }
+
+    &.selected {
+      border-color: $color08;
+    }
+
+    &:hover {
+      box-shadow: 9px 10px 29px 0px rgba($color02, 0.35),
+        0px 10px 40px rgb(0 0 0 / 15%);
+      transform: scale(1.02);
+    }
+
+    .bnpl-status {
+      @include posa(5);
+      @include fz(26);
+      top: 88px;
+      left: 12px;
+      color: $color10;
+    }
+
+    .contract-button {
+      @include posa(5);
+      top: 94px;
+      right: 6px;
+    }
+
+    .point-pulse {
+      @include posa(5);
+      right: 12px;
+      top: 12px;
+    }
+  }
+
+  &--heading {
+    @include flexRow;
+    padding: 16px;
+    flex: 0 0 auto;
+  }
+
+  &--circle {
+    @include size(44px);
+    flex: 0 0 auto;
+    border-radius: 50%;
+    margin-right: 0;
+
+    &.validator {
+      border: 3px solid $modalBackground;
+      background-color: $color01;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .circle-icon {
+      &.tree {
+        transform: scale(0.95);
+      }
+
+      &.eggforce-logo {
+        transform: translateY(0) scale(1.15);
+      }
+
+      &.validator-icon {
+        transform: translateY(0) scale(0.66);
+      }
+    }
+  }
+
+  &--media {
+    @extend %posr;
+    flex: 1 1 0px;
+    overflow: hidden;
+    height: auto;
+    background-color: #1b2138;
+    border-radius: 0 0 24px 24px;
+  }
+
+  &--body {
+    @extend %posa;
+    @include flexRow;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    flex: 0 0 0;
+    padding: 14px;
+    width: 100%;
+  }
+
+  &--background {
+    border-radius: 0 0 24px 24px;
+    overflow: hidden;
+    height: 350px;
+
+    &::before,
+    &::after {
+      @include posa(1);
+      content: '';
+      display: block;
+      height: 130px;
+      width: 100%;
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+    }
+
+    .image,
+    .video {
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .image {
+      @include size(100%);
+      display: block;
+
+      &.fit--cover {
+        object-fit: cover;
+      }
+
+      &.fit--contain {
+        object-fit: contain;
+      }
+    }
+
+    .video {
+      margin-top: -15%;
+    }
+  }
+
+  &--name {
+    @include fz(16);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 24px;
+    color: $color01;
+    display: inline-block;
+    margin: 0;
+    min-width: 100px;
+    padding: 6px 16px;
+    text-align: center;
+  }
+}
+
+.nft-metadata {
+  &--name {
+    @extend .font2;
+    @include fz(20);
+    font-weight: 600;
+  }
+
+  &--creator {
+    @include fz(14);
+    color: #8e94aa;
+    width: 120px;
+  }
+
+  &--contractHash {
+    @include flexRow;
+    @include fz(12);
+    align-items: center;
+    color: #8e94aa;
+
+    span {
+      margin-right: 8px;
+    }
+  }
+
+  &--yearCreation {
+    span {
+      display: block;
+      line-height: 1;
+    }
+
+    .label {
+      @include fz(14);
+      margin-bottom: 0.5rem;
+      opacity: 0.5;
+    }
+
+    .value {
+      @extend .font2;
+      @include fz(28);
+      font-weight: 700;
+    }
+  }
+}
+
+.nft-grid-buttons {
+  align-items: center;
+  background-color: $modalBackground;
+  display: flex;
+  flex-flow: row wrap;
+  left: 0;
+  margin-bottom: 16px;
+  padding: 16px 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  .btn--as-tab {
+    padding-left: 6px;
+    padding-right: 6px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .icon {
+      max-width: 36px;
+      margin-right: 8px;
+
+      &.dragon {
+        border-radius: 50%;
+      }
+    }
+
+    @include query-mobile {
+      .icon {
+        transform: scale(1.45);
+      }
+    }
+
+    @include min-md {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  .column {
+    @include flexRow;
+    align-items: center;
+
+    &.nft-grid-buttons--right {
+      margin-left: auto;
+      column-gap: 8px;
+    }
+  }
+}
+
+.nft-grid-compact {
+  &--container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 12px;
+  }
+}
+
+.nft-grid-item {
+  &--hatching-progress {
+    flex: 1 1 0px;
+    width: auto;
+
+    .gprogress {
+      &--root {
+        font-weight: 600;
+      }
+
+      &--header {
+        margin-bottom: 0;
+      }
+
+      &--body {
+        margin-bottom: 0.25rem;
+      }
+
+      &--header,
+      &--footer {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  &--root-2 {
+    @extend %posr;
+    @extend %animate;
+    box-shadow: 7px 8px 18px 0px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include min-md {
+      @include effectFlipGlossy;
+    }
+
+    &.is-tooltip-content {
+      color: $color01;
+      padding-left: 0;
+      padding-right: 0;
+
+      .nft-grid-item--media {
+        border-radius: 0;
+      }
+    }
+
+    &.is-tooltip-content,
+    &:hover:not(.is-hammer) {
+      .nft-grid-item--background {
+        .image:not(.is-hammer) {
+          transform: scale(2.05) translateX(-16%) translateY(30px);
+        }
+      }
+
+      .box--metadata {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .btn--start-hatching,
+    .btn--start-dragon-hatch {
+      @include fz(12);
+      height: 36px;
+      min-height: 36px;
+
+      .icon-validator {
+        max-width: 60px;
+      }
+    }
+
+    .btn--start-hatching,
+    .btn--start-dragon-hatch {
+      width: 120px;
+    }
+
+    .btn--start-hatching {
+      margin-right: 6px;
+    }
+
+    .btn--start-dragon-hatch {
+      margin-left: 6px;
+    }
+
+    .logo--melem--wrapper {
+      @include posa(15);
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+    }
+
+    .box--metadata {
+      @extend %animate;
+      @include posa(5);
+      right: 30px;
+      top: 100px;
+      text-align: right;
+      opacity: 0;
+      transform: translateX(50%);
+
+      &.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .box-info {
+      &--root {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        .value {
+          @include fz(14);
+
+          &.status {
+            @include generateNFTStatus();
+            min-height: 20px;
+          }
+
+          &.element {
+            .icon {
+              max-width: 24px;
+              margin-right: 4px;
+            }
+          }
+        }
+
+        .label {
+          @include fz(13);
+        }
+      }
+    }
+
+    .custom-layout {
+      @include posr(2);
+
+      .validator-and-progress {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 0 0 auto;
+
+        strong {
+          span {
+            color: $color08;
+          }
+        }
+      }
+
+      .point-pulse {
+        @include posa(5);
+        right: 12px;
+        top: 12px;
+      }
+    }
+
+    .nft-grid-item {
+      &--heading {
+        @include posr;
+        background-color: $modalBackground;
+        display: block;
+        position: relative;
+        z-index: 5;
+        padding: 12px;
+
+        &::before {
+          @include posa(1);
+          background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+          content: '';
+          display: block;
+          height: 130px;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      &--media {
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 2;
+        padding-top: 0px;
+      }
+
+      &--circle {
+        @include posr(3);
+        border: 3px solid $modalBackground;
+        background-color: #1f2d55;
+        transform: scale(1.5);
+
+        &.dragon--Fire {
+          .circle-icon {
+            @include posr;
+            top: -12px;
+          }
+        }
+
+        & + .name {
+          margin-left: 12px;
+        }
+      }
+
+      &--body {
+        padding: 0 14px 32px;
+      }
+
+      &--background {
+        height: 360px;
+
+        &::before {
+          display: none;
+        }
+
+        .image {
+          @extend %animate;
+
+          &:not(.is-hammer) {
+            transform: scale(1.25) translateY(0px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.egg-popper-tooltip {
+  .popover-body {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.egg-hatch-compact-status {
+  @include generateNFTStatus();
+  @include fz(12);
+}

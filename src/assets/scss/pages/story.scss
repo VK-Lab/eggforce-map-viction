@@ -1,0 +1,382 @@
+.storypage {
+  &--block {
+    &-1 {
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @include min-769 {
+        padding-top: 120px;
+        padding-bottom: 120px;
+      }
+    }
+
+    &-2 {
+      @extend %posr;
+
+      .icon-square {
+        @extend %posa;
+
+        &:before,
+        &:after {
+          @extend %posa;
+          background-color: $color01;
+          content: "";
+        }
+
+        &.pos--top-left {
+          left: 0;
+          top: 0;
+
+          &:before {
+            @include size(60px 2px);
+          }
+
+          &:after {
+            @include size(2px 60px);
+          }
+        }
+
+        &.pos--bottom-right {
+          right: 0;
+          bottom: 0;
+
+          &:before {
+            @include size(60px 2px);
+            transform: translateX(-100%);
+          }
+
+          &:after {
+            @include size(2px 60px);
+            transform: translateY(-97%);
+          }
+        }
+      }
+    }
+
+    &-3 {
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @include min-md {
+        padding-bottom: 85px;
+        padding-top: 85px;
+      }
+    }
+  }
+}
+
+.story--part-of-the-story {
+  @include min-md {
+    padding: 45px 0 65px;
+
+    .story-block {
+      &--heading {
+        margin-bottom: 1.25rem;
+      }
+
+      &--content {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.story--what-happens-next {
+  @include min-md {
+    .story-block {
+      &--content {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.story--choose-your-side {
+  padding-bottom: 30px;
+
+  @include min-md {
+    padding-bottom: 60px;
+  }
+}
+
+.story-block {
+  &--heading {
+    text-align: center;
+  }
+
+  &--body {
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    @include query-mobile {
+      .story-block {
+        &--image-column {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  
+    @include min-md {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &.reverse {
+        .story-block {
+          &--content {
+            padding-right: 1.5rem;
+          }
+        }
+      }
+
+      .story-block {
+        &--image-column,
+        &--content {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+
+        &--content {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.story-chapters {
+  &--container {
+    @extend %posr;
+  }
+}
+
+.story-chapter {
+  &--heading {
+    @include fz(40);
+    align-items: center;
+    backdrop-filter: blur(42px);
+    background: linear-gradient(90deg, #FFB356 -11.11%, #F9F871 107.69%);
+    border-radius: 5px 20px 0px 0px;
+    box-shadow: 0px 0px 47px -1px rgba(0, 0, 0, 0.25);
+    color: $color02;
+    display: inline-flex;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0 25px;
+    text-transform: uppercase;
+
+    .heading {
+      line-height: 60px;
+      margin: 0;
+      transform: translateY(5px);
+
+      @include min-md {
+        line-height: 69px;
+      }
+    }
+    
+    @include min-md {
+      padding: 0 40px;
+    }
+  }
+
+  &--content {
+    overflow: hidden;
+    height: 600px;
+  }
+
+  &--body {
+    background: linear-gradient(179.74deg, rgba(248, 247, 247, 0.15) -4.25%, rgba(208, 208, 208, 0) 99.75%);
+    border-radius: 0px 15px 15px 15px;
+    box-shadow: 6px 17px 187px -1px rgba(255, 179, 86, 0.25);
+    filter: drop-shadow(0px 0px 50px $color06);
+    overflow: hidden;
+    padding: 30px 20px 30px 25px;
+    transition-property: none;
+
+    @include min-md {
+      padding: 30px;
+    }
+  }
+}
+
+.story--dragon-boxes {
+  display: flex;
+  flex-flow: row wrap;
+
+  @include min-md {
+    flex-flow: row nowrap;
+  }
+}
+
+.dragon-card {
+  &--box {
+    @include fz(14);
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    width: 100%;
+
+    &.reverse {
+      .dragon-card {
+        &--image-wrapper {
+          order: 2;
+          padding-right: 0;
+          padding-left: 0.5rem;
+        }
+
+        &--content {
+          order: 1;
+          padding-left: 0;
+          padding-right: 0.5rem;
+        }
+      }
+
+      @include min-md {
+        .dragon-card {
+          &--image-wrapper,
+          &--content {
+            padding-left: 0;
+            padding-right: 0;
+          }
+
+          &--image-wrapper {
+            order: 1;
+          }
+
+          &--content {
+            order: 2;
+          }
+        }
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    &.box-2 {
+      width: 56px;
+      margin: 2rem auto;
+    }
+
+    @include min-md {
+      @include fz(16);
+      line-height: 1.55;
+      flex-flow: column nowrap;
+
+      &.box-2 {
+        width: 80px;
+      }
+
+      &.box-1,
+      &.box-3 {
+        width: calc((100% - 110px) / 2);
+      }
+    }
+
+    @include min-desktop {
+      &.box-2 {
+        width: 80px;
+      }
+
+      &.box-1,
+      &.box-3 {
+        width: calc((100% - 80px) / 2);
+      }
+    }
+  }
+
+  &--sword-icon {
+    @include min-md {
+      margin-top: 40px;
+    }
+  }
+
+  &--image-wrapper {
+    width: 40%;
+    padding-right: 0.5rem;
+    text-align: center;
+
+    .heading {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &--image {
+    @include min-md {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    @include min-desktop {
+      max-width: 220px;
+    }
+  }
+
+  &--content {
+    width: 60%;
+    padding-left: 0.5rem;
+
+    @include min-md {
+      padding-left: 0;
+    }
+  }
+
+  &--image-wrapper,
+  &--content {
+    flex: 0 0 auto;
+    
+    p {
+      margin-bottom: 0;
+    }
+
+    @include min-md {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+}
+
+.chapter-wrapper {
+  &--root {
+    clear: both;
+
+    .heading-1 {
+      @include query-mobile {
+        @include fz(26);
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .heading {
+      @include min-md {
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    p {
+      @include fz(16);
+      line-height: 1.55;
+      letter-spacing: 0.125px;
+      font-weight: 400;
+
+      @include min-md {
+        @include fz(18);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.truncated-text {
+  display: flex;
+  width: 100%;
+
+  .content {
+    &--fluid {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &--static {
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.egg-evolve-dragon-confirm {
+  &--modal {
+    .modal-content {
+      background-image: url('../../images/story--next.webp'),
+        radial-gradient(circle at 50% 50%, rgb(77 65 65) 0%, rgb(19 18 22) 100%);
+      background-position: center center, center center;
+      background-size: cover, 100%;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply, normal;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        height: 130px;
+        width: 100%;
+      }
+
+      &::before {
+        top: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+      }
+
+      &::after {
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+      }
+    }
+
+    .modal-header {
+      padding: 0;
+    }
+
+    .modal-body {
+      backdrop-filter: blur(1.5px);
+      z-index: 2;
+    }
+
+    .modal-dialog {
+      max-width: 520px;
+    }
+
+    .body-wrapper {
+      @include posr;
+      @include size(100%);
+      align-items: center;
+      background-image: url('../../images/bg--make-dragon.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 48px;
+      min-height: 450px;
+      width: 88%;
+    }
+
+    .actions {
+      @include posr;
+      margin-top: 16px;
+
+      .icon--how-to-merge {
+        @include fz(28);
+        @include size(42px);
+        @include posa;
+        background: transparent;
+        border: none;
+        color: $color01;
+        left: 50%;
+        line-height: 1;
+        top: 50%;
+        transform: translateX(135px) translateY(-50%);
+      }
+    }
+  }
+}
+
+.egg-evolve-dragon {
+  &--egg {
+    transform: scale(1.65) translateY(10px);
+    width: 140px;
+  }
+}

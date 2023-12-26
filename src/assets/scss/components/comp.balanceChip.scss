@@ -1,0 +1,79 @@
+.chip--balance {
+  @include flexRow;
+  align-items: center;
+
+  .icon {
+    width: 18px;
+    margin-right: 8px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .value {
+    @include fz(16);
+    @extend .font2;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+
+    &.is-hidden {
+      @include posr;
+      top: 6px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .toggler {
+    @include fz(18);
+    @include size(30px);
+    background-color: #33416b; //transparent;
+    border: none;
+    color: $color01;
+    line-height: 1;
+    margin-left: 12px;
+    margin-top: -4px;
+    outline: none;
+    border-radius: 50%;
+
+    svg {
+      @include posr;
+      top: -2px;
+    }
+  }
+}
+
+.token-value--root {
+  @include flexRow;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  column-gap: 6px;
+
+  .icon {
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  .text {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+
+    .cspr-label {
+      opacity: 0.5;
+    }
+  }
+
+  &.reverse {
+    .icon {
+      order: 2;
+    }
+
+    .text {
+      order: 1;
+    }
+  }
+}

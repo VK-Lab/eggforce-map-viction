@@ -1,0 +1,55 @@
+{
+  "owner": {
+    "name": "EggForceNFT",
+    "description": "EggForce is a story and community-driven, high quality hand-drawn 10,000 Egg NFTs collection on Casper Network.",
+    "type": ["dapp"],
+    "identity": {
+      "ownership_disclosure_url": "",
+      "casper_association_kyc_url": "",
+      "casper_association_kyc_onchain": ""
+    },
+    "resources": {
+      "code_of_conduct_url": "",
+      "terms_of_service_url": "",
+      "privacy_policy_url": "",
+      "other": [
+        {
+          "name": "About Us",
+          "url": "https://docs.eggforce.io"
+        }
+      ]
+    },
+    "affiliated_accounts": [
+      {
+        "public_key": "01aaf10e19befa56098c43783d3fedeb7392155860a5bc42bb86b5dd133d209535"
+      }
+    ],
+    "website": "https://eggforce.io",
+    "email": "hello@eggforce.io",
+    "branding": {
+      "logo": {
+        "png_256": "https://eggforce.io/logo512.png",
+        "png_1024": "https://casperdash.io/images/eggforceLogo.webp",
+        "svg": ""
+      }
+    },
+    "location": {
+      "name": "British Virgin Islands",
+      "country": "BVI",
+      "latitude": 18.42693,
+      "longitude": -64.62079
+    },
+    "social": {
+      "keybase": "",
+      "telegram": "@EggForceNFT",
+      "twitter": "@EggForceNFT",
+      "github": "",
+      "youtube": "",
+      "facebook": "",
+      "medium": "",
+      "reddit": "",
+      "wechat": ""
+    }
+  },
+  "nodes": []
+}

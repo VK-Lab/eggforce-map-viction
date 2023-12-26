@@ -1,0 +1,131 @@
+.luckyMoney {
+  &--root {
+    text-align: center;
+
+    .heading.main {
+      font-size: 2vw;
+    }
+  }
+
+  &--video {
+    cursor: pointer;
+    max-width: 100%;
+
+    @include min-desktop {
+      min-height: 448px;
+    }
+  }
+}
+
+.mazeGame {
+  &--root {
+    .maze-image {
+      max-width: 100%;
+    }
+  }
+}
+
+.game-instruction {
+  text-align: center;
+  margin-bottom: 12px;
+
+  &--box {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+
+    strong,
+    a {
+      color: $color25;
+      text-decoration: none;
+    }
+
+    @include min-desktop {
+      max-width: 88%;
+    }
+  }
+
+  &--background {
+    padding: 16px 0;
+    margin-top: 16px;
+
+    // @at-root .game-lixi & {
+    //   // @include getLunaryNewyearBackground;
+    // }
+    // @at-root .game-maze & {
+    //   // @include getLunaryNewyearBackground;
+    // }
+  }
+
+  .heading {
+    color: $color25;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      background-position: left top;
+      background-repeat: no-repeat;
+      background-size: 26px;
+      background-image: url('../../images/icon--arrow-2.webp');
+      line-height: 1.85;
+      padding-left: 36px;
+      text-align: left;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.game-social-sharing {
+  margin-bottom: 16px;
+}
+
+.game-mini {
+  &--popup-wrapper {
+    .leaflet-popup-content-wrapper {
+      background-color: transparent;
+    }
+    .leaflet-popup-content {
+      margin: 0;
+    }
+  }
+
+  &--modal {
+    background-color: $modalBackground;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 12px;
+    width: 280px;
+    border-radius: 8px;
+  }
+
+  &--icon {
+    background: transparent;
+    border: none;
+
+    .icon {
+      display: block;
+      margin: 0 auto 8px;
+      max-height: 56px;
+      max-width: 100%;
+      outline: none;
+      width: auto;
+    }
+
+    .label {
+      @include fz(13);
+      color: $color01;
+      font-weight: 600;
+    }
+  }
+
+  &--icon-item {
+    flex: 0 0 auto;
+    width: 35%;
+    text-align: center;
+  }
+}

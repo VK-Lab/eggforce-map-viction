@@ -1,0 +1,17 @@
+.logo--melem {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+
+  .text {
+    @include fz(13);
+    color: #a5aedc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .logo {
+    width: 44px;
+    transform: scale(1.25);
+  }
+}

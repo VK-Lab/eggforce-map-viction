@@ -1,0 +1,347 @@
+$eggMergeWidth: 926px;
+$eggMergeLeftColumn: 376px;
+$eggMergeLeftRightPadding: 18px;
+$eggMergeRightColumn: $eggMergeWidth - $eggMergeLeftColumn -
+  $eggMergeLeftRightPadding * 2;
+
+.egg-merging-module--modal {
+  .modal-content {
+    background-color: #0b1733;
+  }
+
+  .modal-dialog {
+    max-width: 1180px;
+  }
+}
+
+.egg-merging-layout {
+  .header {
+    text-align: center;
+
+    .body {
+      @include fz(14);
+      opacity: 0.8;
+    }
+  }
+
+  .egg-merge--root {
+    padding: 56px 0;
+  }
+}
+
+.egg-merge {
+  &--root {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &--left-column {
+    flex: 1 1 $eggMergeLeftColumn;
+  }
+
+  &--right-column {
+    flex: 1 1 $eggMergeRightColumn;
+    padding: 0 $eggMergeLeftRightPadding;
+
+    &.is-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-action--wrapper {
+    @include posr(5);
+    margin: 30px auto;
+
+    .icon--how-to-merge {
+      @include fz(28);
+      @include size(42px);
+      @include posa;
+      background: transparent;
+      border: none;
+      color: $color01;
+      left: 50%;
+      line-height: 1;
+      top: 50%;
+      transform: translateX(155px) translateY(-50%);
+    }
+  }
+}
+
+.egg-placeholder {
+  &--box {
+    @include posa(2);
+    @include size(106px);
+    @include fz(13);
+    // background-image: url('../../images/img--bg-unique-square.webp');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 2px solid transparent;
+    border-radius: 4px;
+
+    &-release-hint {
+      @include size(50%);
+      @include posa();
+      border: 2px dashed rgba($color10, 0.5);
+      border-radius: 50%;
+      left: 50%;
+      transform: translate(-50%, -57%);
+      top: 50%;
+    }
+
+    &-empty {
+      @include fz(40);
+      @include flexRow;
+      @extend .font2;
+      align-items: center;
+      align-items: center;
+      cursor: default;
+      display: flex;
+      filter: grayscale(1);
+      font-weight: 600;
+      line-height: 1;
+      justify-content: center;
+      justify-content: center;
+      max-width: 100%;
+      opacity: 0.25;
+      height: 106px;
+    }
+
+    $xOffset: 50%;
+    $yOffset: 26px;
+
+    &.slot-1 {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.slot-2 {
+      left: $xOffset;
+      top: $yOffset;
+      transform: translateX(-50%);
+    }
+
+    &.slot-3 {
+      right: $yOffset;
+      top: $xOffset;
+      transform: translateY(-50%);
+    }
+
+    &.slot-4 {
+      left: $xOffset;
+      bottom: $yOffset;
+      transform: translateX(-50%);
+    }
+
+    &.slot-5 {
+      left: $yOffset;
+      top: $xOffset;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--box-option--wrapper {
+    @include posr;
+  }
+
+  &--box-remove {
+    @include posa(2);
+    @include fz(20);
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    color: $color06;
+  }
+}
+
+.nft-grid-egg {
+  @include posr;
+
+  .label--lucky-point {
+    @include fz(14);
+    @include posa;
+    color: yellow;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .label--id {
+    @extend %animate;
+    @include fz(14);
+    @include posa;
+    background-color: $color01;
+    border-radius: 12px;
+    bottom: 3px;
+    font-weight: 600;
+    left: 50%;
+    line-height: 1;
+    padding: 4px 14px;
+    transform: translateX(-50%);
+    color: $color10;
+
+    &.egg-placeholder--box-id {
+      bottom: -4px;
+    }
+
+    &.is-disabled {
+      background-color: $color21;
+    }
+
+    &.bg--water {
+      background-color: $colorWater;
+    }
+    &.bg--fire {
+      background-color: $colorFire;
+    }
+    &.bg--earth {
+      background-color: $colorEarth;
+    }
+    &.bg--metal {
+      background-color: $colorMetal;
+      color: $modalBackground;
+    }
+    &.bg--wood {
+      background-color: $colorWood;
+    }
+  }
+
+  .tag--icon {
+    @include fz(14);
+    @include size(24px);
+    @include posa;
+    background-color: $modalBackground;
+    border-radius: 50%;
+    border: 2px solid $color01;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .tag--installment {
+    right: 8px;
+    top: 0;
+  }
+
+  .tag--selected,
+  .tag--primary-element {
+    right: 8px;
+    top: 0;
+  }
+
+  .tag--selected {
+    @include fz(20);
+  }
+
+  .option-item {
+    &--thumbnail {
+      &:not(.is-disabled) {
+        &.bg--water {
+          border-color: $colorWater;
+        }
+
+        &.bg--fire {
+          border-color: $colorFire;
+        }
+        &.bg--earth {
+          border-color: $colorEarth;
+        }
+        &.bg--metal {
+          border-color: $colorMetal;
+        }
+        &.bg--wood {
+          border-color: $colorWood;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .option-item--thumbnail:not(.is-disabled) {
+      &.bg--water,
+      &.bg--fire,
+      &.bg--earth,
+      &.bg--metal,
+      &.bg--wood {
+        border-color: transparent;
+      }
+    }
+  }
+
+  // &.active,
+  &:hover {
+    .label--id {
+      &.bg--water {
+        background-color: $colorWaterHover;
+      }
+      &.bg--fire {
+        background-color: $colorFireHover;
+      }
+      &.bg--earth {
+        background-color: $colorEarthHover;
+      }
+      &.bg--metal {
+        background-color: $colorMetalHover;
+      }
+      &.bg--wood {
+        background-color: $colorWoodHover;
+      }
+    }
+  }
+
+  &:hover {
+    .option-item--thumbnail:not(.is-disabled) {
+      &.bg--water {
+        border-color: $colorWaterHover;
+      }
+      &.bg--fire {
+        border-color: $colorFireHover;
+      }
+      &.bg--earth {
+        border-color: $colorEarthHover;
+      }
+      &.bg--metal {
+        border-color: $colorMetalHover;
+      }
+      &.bg--wood {
+        border-color: $colorWoodHover;
+      }
+    }
+  }
+}
+
+.egg-merging-slot {
+  &--root {
+    @extend %posr;
+    padding: 0;
+  }
+
+  &--wrapper {
+    @extend %posr;
+    @include size(100%);
+    @include generateNFTElementBackground;
+    background-position: center center;
+    margin: 0 auto;
+
+    @include min-md {
+      @include size(90%);
+      max-width: 680px;
+    }
+  }
+
+  &--bg-art {
+    @include posr;
+    animation: rotateCircle 360s linear infinite;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.egg-merging--introduction,
+.egg-evolving--introduction {
+  li {
+    @include fz(14);
+  }
+}

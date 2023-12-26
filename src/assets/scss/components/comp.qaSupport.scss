@@ -1,0 +1,252 @@
+.eggForce-accordion {
+  &--root {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-color: $color10;
+    --bs-accordion-btn-color: $color15;
+    --bs-accordion-border-color: $color09;
+    margin-top: 24px;
+
+    .accordion-item {
+      margin-bottom: 10px;
+
+      img {
+        max-width: 100%;
+      }
+
+      .accordion-button {
+        background-color: $color15;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  &--header {
+    .accordion-button {
+      @extend %animate;
+
+      &:after {
+        @include posa;
+        @include size(26px 22px);
+        background: url('../../images/icon--arrow-2.webp');
+        content: '';
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: 15px;
+        right: 10px;
+      }
+
+      &:not(.collapsed) {
+        background: linear-gradient(
+          126.64deg,
+          $color08 12.35%,
+          $color06 93.23%
+        );
+        color: $color03;
+
+        &:after {
+          transform: rotate(90deg);
+        }
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.qa-support-modal--root {
+  .modal-content {
+    background-image: url('../../images/img--grave-background.webp');
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.qa-contact {
+  &--wrapper {
+    margin: 30px 0;
+
+    .heading {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.sharing-blocks {
+  &--wrapper {
+    @include flexRow;
+    justify-content: center;
+
+    .circle {
+      @include size(46px);
+      line-height: 46px;
+      display: inline-block;
+      border-radius: 50%;
+
+      &.discord {
+        background-color: #5865f2;
+
+        img {
+          width: 22px;
+        }
+      }
+    }
+  }
+}
+
+.sharing-button {
+  @extend %posr;
+  @extend %animate;
+  @include onHoldAndScaleDown;
+  background-image: url('../../images/hero-image--mobile.webp');
+  background-position: center 43%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  box-shadow: 0px 0px 25px -1px $color04;
+  margin-left: 8px;
+  margin-right: 8px;
+  min-height: 60px;
+  min-width: 240px;
+  overflow: hidden;
+  padding: 4px 12px !important;
+  border-radius: 16px;
+
+  &.is--compact {
+    min-width: auto;
+    min-height: 30px;
+    margin: 0;
+    box-shadow: none !important;
+
+    .logo {
+      width: 20px;
+    }
+  }
+
+  .logo {
+    width: 32px;
+  }
+
+  &:hover {
+    box-shadow: $bs03;
+  }
+
+  &.use--selvyn-bg {
+    background-image: url('../../images/icon--treeSelvyn.webp');
+    background-position: center 37%;
+  }
+
+  &.use--egg-bg {
+    &:before {
+      background: linear-gradient(
+        90deg,
+        rgba(7, 26, 82, 0) 0%,
+        rgb(87 8 99) 65%,
+        rgb(138 21 118) 100%
+      );
+    }
+
+    background-image: url('../../images/TR-08.png');
+    background-position: center 60%;
+    background-size: 100%;
+    background-color: #92319e !important;
+  }
+
+  &.bg--discord,
+  &.bg--telegram {
+    background: none;
+    min-height: 48px;
+    box-shadow: none;
+
+    &.is--compact {
+      min-height: 30px;
+
+      .label {
+        margin-left: 8px;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    .label {
+      @include fz(12);
+      text-align: left;
+    }
+  }
+
+  &.bg--discord {
+    background-color: #7289da;
+    @include generateButtonShadow(
+      #3050c3,
+      #2945a8,
+      #7289da,
+      #2945a8,
+      #3050c3,
+      #203686
+    );
+  }
+
+  &.bg--telegram {
+    background-color: #2aabee;
+
+    @include generateButtonShadow(
+      #276f96,
+      #2084ba,
+      #2aabee,
+      #2084ba,
+      #175475,
+      #175475
+    );
+
+    &.is--compact {
+      .logo {
+        width: 24px;
+      }
+    }
+  }
+
+  &:before {
+    @include size(100% 100%);
+    @include posa(-1);
+    bottom: 0;
+    left: 0;
+    content: '';
+    background: rgb(7, 26, 82);
+    background: linear-gradient(
+      90deg,
+      rgba(7, 26, 82, 0) 0%,
+      rgba(7, 26, 82, 1) 65%,
+      rgba(7, 26, 82, 1) 100%
+    );
+  }
+
+  &.size {
+    &--small {
+      padding: 4px 12px !important;
+      border-radius: 24px;
+      min-width: 140px;
+      min-height: 48px;
+
+      .label {
+        @include fz(14);
+      }
+    }
+  }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .label {
+    @include fz(16);
+    color: $color01;
+    margin-left: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

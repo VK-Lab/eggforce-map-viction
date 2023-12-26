@@ -1,0 +1,163 @@
+.empty-box-placeholder--root {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 320px;
+
+  .empty-box--wrapper {
+    text-align: center;
+    opacity: 0.75;
+  }
+
+  .icon {
+    @include fz(46);
+    margin-bottom: 4px;
+  }
+}
+
+.notification-sidebar {
+  &--empty-box {
+    height: 100%;
+  }
+
+  &--btn-trigger {
+    @extend %animate;
+    @include fz(22);
+    @include size(32px);
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: $color01;
+    display: flex;
+  }
+
+  &--root {
+    color: $color01;
+
+    a {
+      color: $color01;
+      text-decoration: none;
+    }
+  }
+
+  &--body {
+    background-color: $modalBackground;
+    background-image: none;
+
+    &.connector-wallets {
+      @extend %posr;
+      background-image: url('../../images/easter-hero-image--mobile.png');
+      background-repeat: no-repeat;
+      background-position: center 0;
+      padding-top: 50px;
+
+      .sharing-button.bg--discord {
+        @include posa;
+        left: 0;
+        right: 0;
+        bottom: 24px;
+        margin: auto;
+        width: 80%;
+        max-width: 240px;
+      }
+    }
+
+    .helper {
+      @include fz(14);
+      font-weight: 500;
+    }
+  }
+
+  &--header {
+    background-color: lighten($modalBackground, 3%);
+
+    .offcanvas-title {
+      @include fz(16);
+      font-weight: 500;
+    }
+  }
+}
+
+.notification-item {
+  &--root {
+    @extend %animate;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #162240;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    &:hover {
+      background-color: #202c4c;
+    }
+  }
+
+  &--content {
+    @include flexRow;
+    @include fz(14);
+    font-weight: 500;
+  }
+
+  &--type {
+    @include fz(24);
+    color: $color16;
+    flex: 0 0 auto;
+    text-align: center;
+    width: 32px;
+
+    @at-root .is--completed #{&} {
+      color: $color13;
+    }
+
+    @at-root .is--pending #{&} {
+      color: $color16;
+    }
+
+    @at-root .is--failed #{&} {
+      color: $color05;
+    }
+  }
+
+  &--body {
+    flex: 1 1 0px;
+    padding-left: 12px;
+    padding-right: 0;
+    width: auto;
+    max-width: calc(100% - 32px);
+
+    .content {
+      margin-bottom: 4px;
+    }
+
+    .last-updated {
+      @include fz(13);
+      color: rgba($color01, 0.5);
+      margin-bottom: 0;
+    }
+
+    .hash-text {
+      @include fz(12);
+      background-color: $color16;
+      border-radius: 12px;
+      color: $color10;
+      display: inline-block;
+      font-weight: 600;
+      padding: 4px 8px;
+      width: 96px;
+
+      @at-root .is--completed #{&} {
+        background-color: $color13;
+      }
+
+      @at-root .is--pending #{&} {
+        background-color: $color16;
+      }
+
+      @at-root .is--failed #{&} {
+        background-color: $color05;
+      }
+    }
+  }
+}

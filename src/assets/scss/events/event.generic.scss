@@ -1,0 +1,85 @@
+.event-message--root {
+  strong {
+    color: $color12;
+  }
+
+  p a {
+    color: $color12;
+  }
+}
+
+.announcements--list-item {
+  .event-list-item {
+    @include fz(15);
+  }
+}
+
+.adhoc-result-event--modal {
+  .modal-header,
+  .modal-body {
+    position: relative;
+    z-index: 3;
+  }
+  .modal-body {
+    @include posr;
+    padding: 0;
+    text-align: center;
+  }
+
+  .modal-content {
+    background-color: transparent;
+    background-image: url('../../chapter-images/chapter1--01.webp');
+    background-position: center 40%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+  .notification-modal {
+    &--box {
+      background-color: transparent;
+
+      .header {
+        @include posr(2);
+      }
+
+      .body {
+        @include posr(3);
+
+        p {
+          margin-bottom: 12px;
+          text-align: center;
+        }
+      }
+
+      .helper {
+        background-color: rgba($color03, 0.75);
+        opacity: 1;
+        padding: 8px;
+      }
+
+      .tree-selvyn {
+        max-width: 100%;
+        transform: translateY(20px);
+      }
+    }
+
+    &--box-wrapper {
+      @include posr(5);
+    }
+  }
+
+  .modal-gradient--bottom {
+    @include posa(1);
+    @include size(100% 80%);
+    background: rgb(12, 24, 57);
+    background: linear-gradient(
+      180deg,
+      rgba(12, 24, 57, 0) 0%,
+      rgba(12, 24, 57, 0.908000700280112) 35%,
+      rgba(12, 24, 57, 1) 77%,
+      rgba(12, 24, 57, 1) 100%
+    );
+    bottom: 0;
+  }
+}

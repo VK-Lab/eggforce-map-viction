@@ -1,0 +1,85 @@
+
+/** Block Partners **/
+
+.block--partners {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  @include min-md {
+    padding-top: 65px;
+    padding-bottom: 65px;
+
+    .heading {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.partner-grid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4rem 16px;
+  justify-content: center;
+
+  @include min-md {
+    gap: 6rem 16px;
+  }
+
+  .grid-item {
+    flex: 0 0 auto;
+    width: calc(100%/2 - 32px);
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    @include min-md {
+      width: calc(100%/3 - 32px);
+    }
+
+    &--logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      height: auto;
+      flex: 1 1 0px;
+    }
+
+    &--link {
+      display: block;
+
+      img {
+        display: block;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 140px;
+
+        @include query-timeline--vertical {
+          max-height: 110px;
+        }
+      }
+    }
+
+    &--name {
+      margin-top: auto;
+
+      h3 {
+        @extend %animate;
+        @include fz(16);
+        margin-bottom: 0;
+        opacity: 0.65;
+      }
+    }
+
+    &:hover {
+      .grid-item--name h3 {
+        opacity: 1;
+      }
+    }
+  }
+}

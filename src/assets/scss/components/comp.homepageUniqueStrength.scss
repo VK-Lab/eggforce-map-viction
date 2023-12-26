@@ -1,0 +1,351 @@
+@import '../mixins/mixin.nft.scss';
+/** Block EggForce unique strength **/
+.block--unique-strength {
+  margin-top: 4.5rem;
+}
+
+.block-unique-strength {
+  &--root {
+    @extend %posr;
+    padding: 60px 0;
+
+    &.no-padding {
+      padding: 0;
+    }
+  }
+
+  &--wrapper {
+    @extend %posr;
+    @include size(100%);
+    // @include generateNFTElementBackground;
+    background-position: center center;
+    margin: 0 auto;
+
+    @include min-md {
+      @include size(90%);
+      max-width: 680px;
+
+      &.for--merging {
+        @include size(100%);
+        background-image: url('../../images/bg--merge-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &.skipping-text {
+      @include min-md {
+        max-width: 520px;
+        min-height: 360px;
+        width: 64%;
+        margin-top: -50px;
+        margin-bottom: -25px;
+
+        .block-unique-strength--egg-wrapper {
+          transform: translateX(6px) translateY(0);
+        }
+      }
+    }
+
+    &.for--nft-detail-view {
+      margin-top: -20px;
+      margin-bottom: -50px;
+    }
+
+    &.for--hatching {
+      .block-unique-strength--egg-wrapper {
+        left: 50%;
+        min-width: 300px;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    &.for-cardview {
+      &.is--eggforce_dragon_nft {
+        margin-bottom: 0;
+        margin-top: 0;
+        min-height: $dragonSize;
+        height: 100%;
+
+        .block-unique-strength--egg {
+          background-image: url('../../images/story--next.webp'),
+            radial-gradient(
+              circle at 50% 50%,
+              rgb(77 65 65) 0%,
+              rgb(19 18 22) 100%
+            );
+          background-position: center center, center center;
+          background-size: cover, 100%;
+          background-repeat: no-repeat;
+          background-blend-mode: multiply, normal;
+          padding: 8px;
+          border-radius: 24px 24px 0 0;
+        }
+
+        &.no--original-egg {
+          .block-unique-strength--egg {
+            border-radius: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  &--egg-wrapper {
+    @include posa(5);
+    top: 0;
+    // transform: translateX(10px) translateY(16px);
+
+    // @include min-md {
+    //   transform: translateX(12px) translateY(22px);
+    // }
+  }
+
+  &--egg {
+    &.has-pulse-animation {
+      transform: scale(0.65);
+      max-width: 100%;
+      animation: eggpulse 8s infinite;
+      animation-fill-mode: forwards;
+      transform-origin: 50% 55%;
+
+      @include min-md {
+        transform: scale(0.75);
+
+        @at-root .ssr-egg #{&} {
+          transform: scale(0.6) translateX(8px);
+          animation: none;
+        }
+      }
+    }
+  }
+
+  &--bg-art {
+    @include posr;
+    animation: rotateCircle 360s linear infinite;
+    max-width: 100%;
+    display: block;
+  }
+
+  &--bg-element {
+    @include posa(2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    display: block;
+
+    &.element {
+      &--water {
+        transform: translate(-49%, -51%);
+      }
+      &--wood {
+        transform: translate(-51%, -50%);
+      }
+      &--fire {
+        transform: translate(-50%, -62%);
+      }
+      &--earth {
+        transform: translate(-50%, -50%);
+      }
+      &--wind {
+        transform: translate(-50%, -50%);
+      }
+      &--metal {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+@keyframes eggpulse {
+  10% {
+    transform: scale(0.65);
+  }
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.unique-strength {
+  &--item {
+    @extend %posa;
+    @include size(94px);
+    @include fz(11);
+    background-image: url('../../images/img--bg-unique-square.webp');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+
+    @include min-md {
+      @include fz(14);
+      @include size(132px);
+    }
+
+    /**
+        1
+      6   2
+      5   3
+        4
+    */
+    &.word {
+      &-1,
+      &-4 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-2,
+      &-6 {
+        top: 50%;
+      }
+
+      &-1 {
+        top: -2px;
+      }
+
+      &-2 {
+        transform: translateY(-145%);
+        right: 0;
+
+        span {
+          position: relative;
+          top: -4px;
+        }
+
+        @include query-mobile {
+          span {
+            top: -5px;
+          }
+        }
+      }
+
+      &-3 {
+        right: 6px;
+        transform: translateY(42%);
+        top: 50%;
+      }
+
+      &-4 {
+        bottom: 0;
+      }
+
+      &-5 {
+        left: 13px;
+        top: 47%;
+        transform: translateY(55%);
+      }
+
+      &-6 {
+        left: -2px;
+        transform: translateY(-128%);
+      }
+
+      @include min-md {
+        &-1,
+        &-4 {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &-2,
+        &-6 {
+          top: 50%;
+        }
+
+        &-3,
+        &-5 {
+          top: 50%;
+          transform: translateY(55%);
+        }
+
+        &-1 {
+          top: 10px;
+        }
+
+        &-2 {
+          transform: translateY(-161%);
+          right: 9px;
+        }
+
+        &-3 {
+          right: 22px;
+          transform: translateY(63%);
+        }
+
+        &-4 {
+          bottom: 9px;
+        }
+
+        &-5 {
+          left: 35px;
+          transform: translateY(63%);
+        }
+
+        &-6 {
+          left: 35px;
+          transform: translateY(-140%);
+        }
+      }
+
+      @include min-desktop {
+        &-1,
+        &-4 {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &-2,
+        &-6 {
+          top: 50%;
+        }
+
+        &-3,
+        &-5 {
+          top: 50%;
+          transform: translateY(55%);
+        }
+
+        &-1 {
+          top: 12px;
+        }
+
+        &-2 {
+          transform: translateY(-171%);
+          right: 13px;
+        }
+
+        &-3 {
+          right: 29px;
+          transform: translateY(73%);
+        }
+
+        &-4 {
+          bottom: 15px;
+        }
+
+        &-5 {
+          left: 45px;
+          transform: translateY(72%);
+        }
+
+        &-6 {
+          left: 15px;
+          transform: translateY(-153%);
+        }
+      }
+    }
+  }
+}

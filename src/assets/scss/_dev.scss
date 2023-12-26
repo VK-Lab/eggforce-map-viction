@@ -1,0 +1,39 @@
+html body {
+  @extend .font1;
+  background-color: $color03;
+  color: $color01;
+}
+
+.layout-body--root {
+  @extend %animate;
+
+  &.is--regular-page {
+    padding-top: 110px;
+  }
+
+  &.use--common-background {
+    background-image: url('../images/bg--snc.jpg'),
+      url('../images/img--clould-background.webp'),
+      url('../images/img--grave-background.webp');
+    background-position: center top, right center, center bottom;
+    background-size: 100%, 75%, 100%;
+    background-repeat: no-repeat;
+  }
+
+  &.use--dragon-background {
+    background-image: url('../images/bg--journey.png'),
+      url('../images/img--clould-background.webp'),
+      url('../images/img--grave-background.webp');
+    background-position: center top, right center, center bottom;
+    background-size: 100vw 100vh, 75%, 100%;
+    background-repeat: no-repeat;
+    background-color: #05183a;
+    background-attachment: fixed;
+  }
+}
+
+.container {
+  &.fullwidth {
+    max-width: 100%;
+  }
+}

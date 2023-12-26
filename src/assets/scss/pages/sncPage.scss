@@ -1,0 +1,321 @@
+.snc-block {
+  &--child {
+    padding: 60px 0;
+
+    &.snc-utilities {
+      padding: 60px 0;
+      a {
+        color: $color08;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    & > .body {
+      max-width: 800px;
+    }
+  }
+
+  &--whatisSNC {
+    padding: 120px 0 60px;
+    background-image: url('../../images/layer--coin-flying.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .body {
+      margin-top: 60px;
+    }
+
+    .heading-1 {
+      @include fz(60);
+      font-size: 3.4vw;
+    }
+  }
+
+  &--q-a {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.snc-gameplay {
+  &--block {
+    .body {
+      text-align: center;
+      margin: 0 auto 40px;
+    }
+
+    .square-item {
+      border-color: #3e4b72;
+      .image {
+        background-size: 60%;
+      }
+    }
+
+    .column {
+      &.leaft {
+        .square-wrapper {
+          &:after,
+          &:before {
+            top: 72px;
+            width: 32px;
+          }
+
+          &:after {
+            left: -45px;
+          }
+
+          &::before {
+            right: -45px;
+          }
+        }
+      }
+    }
+
+    .gameplay--how-to {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.nft-utility {
+  &--snc-token {
+    display: block;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include min-md {
+      max-width: 370px;
+    }
+  }
+
+  &--primary-wrapper.snc-wrapper {
+    .nft-benefit--point {
+      &.point-1 {
+        @include size(200px auto);
+        left: -90px;
+        top: 12px;
+
+        .pointer {
+          @include size(124px 2px);
+          bottom: -124px;
+          right: -46px;
+          transform-origin: right center;
+          transform: rotate(68deg);
+        }
+
+        .point-pulse {
+          &.mobile {
+            left: 190px;
+            top: 90px;
+          }
+
+          &.desktop {
+            bottom: -3px;
+            right: -2px;
+          }
+        }
+
+        // Disable overflow
+        @include max-sm {
+          left: 0;
+          top: 0;
+        }
+
+        @include min-md {
+          width: 200px;
+          left: -90px;
+          top: 0;
+        }
+      }
+
+      &.point-2 {
+        @include size(280px auto);
+        top: 120px;
+        right: -190px;
+
+        .pointer {
+          @include size(100px 2px);
+          bottom: -10px;
+          left: 1px;
+          transform-origin: left center;
+          transform: rotate(120deg);
+
+          &:after {
+            top: -3px;
+            right: -2px;
+          }
+        }
+
+        .point-pulse {
+          &.mobile {
+            left: 170px;
+            top: 40px;
+          }
+
+          &.desktop {
+            bottom: -4px;
+            right: -2px;
+          }
+        }
+
+        // Disable overflow
+        @include max-sm {
+          right: 0;
+        }
+
+        @include min-md {
+          width: 160px;
+          right: -150px;
+          top: 30px;
+        }
+      }
+
+      &.point-3 {
+        @include size(300px auto);
+        left: 100px;
+        bottom: 100px;
+
+        .pointer {
+          @include size(90px 2px);
+          bottom: -92px;
+          right: -38px;
+          transform-origin: right center;
+          transform: rotate(65deg);
+
+          &:after {
+            bottom: -5px;
+            right: -2px;
+          }
+        }
+
+        .point-pulse {
+          &.mobile {
+            left: 100px;
+            top: 10px;
+          }
+
+          &.desktop {
+            bottom: -3px;
+            right: -2px;
+          }
+        }
+
+        // Disable overflow
+        @include max-sm {
+          left: 0;
+        }
+
+        @include min-sm {
+          left: -155px;
+          bottom: 200px;
+        }
+
+        @include min-md {
+          width: 200px;
+          left: -165px;
+          bottom: 200px;
+        }
+      }
+
+      &.point-4 {
+        @include size(280px auto);
+        bottom: 40px;
+        right: -140px;
+
+        .pointer {
+          @include size(100px 2px);
+          bottom: -10px;
+          left: 1px;
+          transform-origin: left center;
+          transform: rotate(-140deg);
+
+          &:after {
+            top: -3px;
+            right: -2px;
+          }
+        }
+
+        .point-pulse {
+          &.mobile {
+            left: 120px;
+            top: -35px;
+          }
+
+          &.desktop {
+            bottom: -4px;
+            right: -2px;
+          }
+        }
+
+        // Disable overflow
+        @include max-sm {
+          right: 0;
+        }
+
+        @include min-md {
+          width: 190px;
+          right: -130px;
+        }
+      }
+    }
+  }
+}
+
+.btn--sticky-SNC-register-button {
+  @extend %animate;
+  @include onHoldAndScaleDown;
+  @include textShadow03;
+  @include fz(14);
+  color: $color10;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+
+  .sharing-button {
+    .label {
+      .text-2 {
+        display: inline-block;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.snc-tokenomic--content {
+  .coming-soon {
+    @extend %posr;
+    @include fz(24);
+    align-items: center;
+    background-image: url('../../images/story--story-part.webp');
+    background-size: cover;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    overflow: hidden;
+    padding: 160px 0;
+
+    .overlay {
+      @include posa(2);
+      @include size(100%);
+      content: '';
+      background-color: rgba($modalBackground, 0.75);
+    }
+
+    .text {
+      @include posr(5);
+    }
+  }
+}

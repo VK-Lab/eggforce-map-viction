@@ -1,0 +1,121 @@
+.gmodal--root {
+  &.compact-modal {
+    backdrop-filter: blur(2.5px) grayscale(0.5);
+
+    .modal-dialog {
+      max-width: 460px;
+    }
+
+    &.flash-game-reward {
+      .modal-dialog {
+        max-width: 560px;
+      }
+    }
+  }
+}
+
+.compact-modal {
+  &.image-only {
+    padding: 0;
+
+    .modal-dialog {
+      max-width: 520px;
+    }
+
+    .modal-header {
+      padding-top: 0;
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+
+    .card--image {
+      max-width: 100%;
+    }
+
+    .compact-modal {
+      &--box {
+        padding: 0;
+      }
+
+      &--image-box {
+        border-radius: 42px;
+        overflow: hidden;
+        max-height: 85vh;
+      }
+
+      &--actions {
+        padding: 12px;
+      }
+    }
+  }
+
+  &--box-wrapper {
+    background-color: transparent;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--box {
+    background-color: $modalBackground;
+    padding: 16px 8px 32px;
+    border-radius: 12px;
+
+    .btn--action {
+      width: 100%;
+    }
+
+    .icon {
+      &:not(.ignore) {
+        @include fz(96);
+        line-height: 1;
+        margin: 0;
+        color: $color08;
+        font-weight: bold;
+      }
+    }
+
+    .header {
+      @include flexRow;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+
+    .body {
+      text-align: center;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: $color08;
+      }
+
+      .heading {
+        margin-bottom: 16px;
+        line-height: 1;
+      }
+    }
+
+    .actions {
+      margin-top: 16px;
+      text-align: center;
+
+      .ef-button {
+        width: 140px;
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+    }
+
+    .content {
+      padding-top: 16px;
+    }
+  }
+}

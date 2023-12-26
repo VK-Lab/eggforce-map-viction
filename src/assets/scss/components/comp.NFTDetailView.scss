@@ -1,0 +1,1030 @@
+.gmodal--root.nft-detail-view-modal {
+  backdrop-filter: blur(8px) grayscale(0.5);
+
+  .modal-content {
+    // background-image: url('https://i.pinimg.com/564x/fc/89/3c/fc893c5572c1692b996c0f7883d83fa6.jpg'),
+    //   url('../../images/img--grave-background.webp');
+    background-image: url('../../images/bg--nft-detail.png'),
+      url('../../images/img--grave-background.webp');
+    background-position: top center, center bottom;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    &::before,
+    &::after {
+      @include posa(1);
+      content: '';
+      display: block;
+      height: 130px;
+      width: 100%;
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+    }
+  }
+
+  .modal-header {
+    padding: 0;
+    margin: 0;
+  }
+
+  .modal-body {
+    z-index: 10;
+    min-height: 520px;
+  }
+
+  .modal-dialog {
+    max-width: 920px;
+  }
+}
+
+.nft-detail-view {
+  &--overlay {
+    @include posa;
+    @include size(100%);
+    background-color: rgba($modalBackground, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--close {
+    @include posa;
+    right: 12px;
+    top: 12px;
+  }
+
+  &--close-button {
+    @include fz(26);
+    padding: 0;
+    width: 46px;
+  }
+
+  &--box {
+    .body {
+      @include flexRow;
+      flex-flow: row wrap;
+      align-items: center;
+      padding-top: 30px;
+
+      &.egg-is-processing {
+        padding-top: 0;
+      }
+
+      .image-wrapper,
+      .nft-actions-row {
+        position: relative;
+      }
+
+      .image-wrapper {
+        flex: 0 0 auto;
+        width: 100%;
+        z-index: 1;
+
+        &.is--dragon {
+          padding: 120px 80px 80px;
+
+          &.no--original-egg {
+            padding: 120px 80px;
+          }
+        }
+      }
+
+      .metadata-wrapper {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 36px 16px 16px;
+
+        .name {
+          @include posr(6);
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &--name,
+  &--creator {
+    text-align: center;
+  }
+
+  &--name {
+    @extend .font2;
+    @include fz(36);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &--creator {
+    @include fz(14);
+    color: #8e94aa;
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  &--background {
+    height: 100%;
+  }
+
+  &--media {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 340px;
+
+    &.for--hatching {
+      height: 280px;
+    }
+
+    &.is--eggforce_dragon_nft {
+      @include size($dragonSize);
+      background-image: url('../../images/story--next.webp'),
+        radial-gradient(circle at 50% 50%, rgb(77 65 65) 0%, rgb(19 18 22) 100%);
+
+      // background-image: url('../../images/mint-hero-image--mobile.webp');
+      background-position: center center, center center;
+      background-size: cover, 100%;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply, normal;
+    }
+
+    .image,
+    .video {
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .image {
+      @include size(100%);
+      display: block;
+
+      &.fit--cover {
+        object-fit: cover;
+      }
+
+      &.fit--contain {
+        object-fit: contain;
+      }
+    }
+
+    .video {
+      margin-top: -15%;
+    }
+  }
+
+  &--tabs-wrapper {
+    min-height: 300px;
+
+    .nav-tabs {
+      border-color: $color17;
+
+      .nav-link {
+        @include fz(15);
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        color: $color10;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        &:hover,
+        &:focus {
+          color: $color10;
+          border-color: $color17;
+        }
+
+        &.active {
+          background-color: $color17;
+          border-color: $color17;
+          color: $color10;
+        }
+      }
+    }
+  }
+}
+
+.metadata-properties {
+  &.is-box {
+    @include flexRow;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  &-is-row {
+    margin-top: 24px;
+  }
+
+  .metadata-box {
+    background-color: $color23;
+    border-radius: 12px;
+    box-shadow: $bs05;
+    flex: 0 0 auto;
+    padding: 16px 0;
+    text-align: center;
+    width: 32%;
+
+    .title {
+      @include fz(14);
+      opacity: 0.5;
+    }
+
+    .value {
+      @include fz(18);
+    }
+  }
+
+  .metadata {
+    &--row {
+      @include flexRow;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 4px 0;
+    }
+
+    &--column {
+      &.left {
+        @include fz(14);
+        flex: 0 0 auto;
+        width: 30%;
+        opacity: 0.5;
+      }
+
+      &.right {
+        text-align: right;
+        flex: 0 0 auto;
+        width: 70%;
+      }
+    }
+  }
+}
+
+.nft-detail {
+  &-progress--wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &-progress-level-info {
+    strong {
+      color: $color12;
+    }
+
+    a {
+      color: $color01;
+    }
+  }
+
+  &-hatching--wrapper {
+    margin-bottom: 32px;
+  }
+
+  &-basic-info--wrapper {
+    margin-bottom: 0;
+  }
+
+  &-metadata-column {
+    @include posa;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+
+    .item {
+      @extend %animate;
+      @include posr;
+      background-color: $modalBackground;
+      border-radius: 12px;
+      box-shadow: $bs05;
+      padding: 16px;
+      min-width: 130px;
+
+      &:hover {
+        background-color: $color11;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      &.unhatch-desktop-button {
+        padding: 0;
+      }
+
+      .label {
+        @include fz(14);
+        opacity: 0.5;
+      }
+
+      .value {
+        @include fz(20);
+        font-weight: 600;
+
+        &.staked-amount {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          .cspr-amount {
+            margin-right: 8px;
+          }
+
+          .icon-cspr {
+            .logo {
+              width: 24px;
+            }
+          }
+        }
+      }
+
+      .icon {
+        @include posa;
+        @include size(40px);
+      }
+    }
+  }
+
+  &-dragon-attributes {
+    @include posa(5);
+    @include size($dragonSize);
+    // background: rgba(red, 0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.nft-actions-row {
+  @include flexRow;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 60px 0 40px;
+  column-gap: 2%;
+  z-index: 5;
+
+  &.has-2-buttons {
+    justify-content: center;
+  }
+
+  .helper-wrapper {
+    margin-top: 16px;
+  }
+}
+
+.nft-action-button--column {
+  flex: 0 0 auto;
+
+  &.column--hatch {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 30%;
+    z-index: 1;
+
+    @include query-mobile {
+      order: 1;
+      width: 100%;
+    }
+  }
+
+  &.column--unhatch,
+  &.column--claim,
+  &.column--evolve-dragon {
+    width: 30%;
+
+    @include query-mobile {
+      order: 2;
+      width: 45%;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+  }
+}
+
+.btn--nft-action {
+  color: $color01;
+  min-height: 0;
+  width: 170px;
+
+  &.inside-nft-detail {
+    @include fz(14);
+    @include flexRow;
+    align-items: center;
+    height: 46px;
+    width: 100%;
+
+    @include min-md {
+      height: 58px;
+    }
+
+    &[disabled] {
+      .icon {
+        filter: grayscale(1);
+      }
+    }
+
+    .icon {
+      max-width: 80px;
+      margin-right: 8px;
+
+      &--hatch {
+        transform: translateY(-6px);
+        margin-left: -60px;
+      }
+
+      &--unhatch {
+        transform: translateY(-5px);
+      }
+
+      &--claim-snc,
+      &--unhatch {
+        @include query-mobile {
+          max-width: 44px;
+        }
+      }
+
+      &--evolve-dragon {
+        max-width: 60px;
+      }
+    }
+
+    &.btn--claim-snc,
+    &.btn--evolve-dragon,
+    &.btn--stop-hatching {
+      @include query-mobile {
+        padding: 0;
+      }
+    }
+
+    &.btn--stop-hatching {
+      &.desktop {
+        @include fz(12);
+        height: 34px;
+        padding: 0 8px 0 6px;
+
+        .icon--unhatch {
+          position: relative;
+          transform: translateY(-2px);
+          left: 0;
+        }
+      }
+    }
+
+    &.btn--start-merging {
+      margin: 0 auto;
+      padding: 8px 24px 8px 0;
+      width: 310px;
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    &.btn--evolve-dragon {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+
+      .icon {
+        position: relative;
+        top: -3px;
+      }
+
+      @include min-md {
+        width: 260px;
+      }
+    }
+  }
+}
+
+.eggForce-accordion--root.nft-detail {
+  .accordion-button {
+    display: block;
+
+    &:not(.collapsed) {
+      strong {
+        color: $color03;
+      }
+    }
+  }
+
+  .accordion-button,
+  .accordion-body {
+    @include fz(14);
+    font-weight: 500;
+
+    strong {
+      color: $color08;
+    }
+  }
+}
+
+.confirm-unhatch-undelegate-modal {
+  .checkbox--undelegate {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#tooltip--confirm-unhatch-undelegate {
+  .tooltip-inner {
+    text-align: left;
+    width: 460px;
+    max-width: 460px;
+  }
+}
+
+.tip--egg-is-processing {
+  @include fz(14);
+  box-shadow: $bs05;
+  align-items: center;
+  background-color: #65a0ce;
+  border-radius: 16px;
+  color: #271751;
+  display: flex;
+  margin: 92px auto 0;
+  padding: 8px;
+  width: 80%;
+
+  .icon {
+    margin-right: 8px;
+
+    img {
+      display: block;
+      width: 36px;
+    }
+  }
+}
+
+.nft-detail-view--icon-element {
+  @include posa;
+  max-width: 96px;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+
+  &.element--Fire {
+    top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.horizontal-attributes--wrapper {
+  @include flexRow;
+  @include posr(5);
+  align-items: center;
+  background-color: #0f2032; // $modalBackground;
+  border-radius: 24px;
+  justify-content: space-evenly;
+  max-width: 98%;
+  margin: 0 auto;
+
+  @include query-mobile {
+    padding: 6px;
+    flex-flow: row wrap;
+  }
+
+  @include min-md {
+    max-height: 42px;
+  }
+
+  .each-attribute {
+    @include flexRow;
+    align-items: center;
+
+    @include query-mobile {
+      flex: 0 0 auto;
+      width: 48%;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &.elemental,
+    &.rarity,
+    &.dob,
+    &.dna {
+      text-align: center;
+      padding: 8px 0;
+
+      .img {
+        @include fz(20);
+        transform: scale(1.25);
+      }
+    }
+
+    &.elemental,
+    &.dob,
+    &.rarity {
+      .icon {
+        width: 32px;
+      }
+    }
+
+    &.dna {
+      width: 160px;
+
+      .label {
+        overflow: hidden;
+      }
+
+      .icon {
+        width: 56px;
+        margin-right: 8px;
+      }
+    }
+
+    &.viction {
+      .icon {
+        width: 20px;
+
+        @include min-md {
+          width: 28px;
+        }
+      }
+    }
+
+    .icon {
+      width: 26px;
+      margin-right: 4px;
+      text-align: center;
+
+      @include min-md {
+        width: 56px;
+      }
+    }
+
+    .img {
+      display: block;
+      max-width: 100%;
+
+      &.inline-block {
+        display: inline-block;
+      }
+
+      &.level {
+        transform: scale(1.24);
+
+        @include min-md {
+          transform: scale(1.5);
+        }
+      }
+
+      &.snc {
+        transform: scale(1.2);
+
+        @include min-md {
+          transform: scale(1.28);
+        }
+      }
+
+      &.xp {
+        transform: scale(1.2);
+
+        @include min-md {
+          transform: scale(1.36);
+        }
+      }
+    }
+
+    .label {
+      @include fz(14);
+      font-weight: 600;
+
+      @include min-md {
+        @include fz(16);
+      }
+
+      &.snc {
+        @include flexRow;
+        align-items: center;
+        margin-left: 8px;
+
+        .text-snc {
+          line-height: 1;
+        }
+
+        .lighting-bolt {
+          width: 28px;
+          margin-top: 12px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.nft-detail-xp-progress {
+  &--wrapper {
+    @extend %posr;
+    background-color: $modalBackground;
+    border-radius: 16px;
+    width: 90%;
+    min-height: 28px;
+    margin: 0 auto;
+
+    @include min-md {
+      width: 500px;
+    }
+
+    &.bg {
+      &--water {
+        background: $modalBackground;
+      }
+
+      &--wood {
+        background: #210c01;
+      }
+
+      &--fire {
+        background: #2c0500;
+      }
+
+      &--earth {
+        background: #142715;
+      }
+
+      &--wind {
+        background: #222d29;
+      }
+
+      &--metal {
+        background: #390039;
+      }
+    }
+
+    &.claiming {
+      background-color: rgb(52 12 83);
+      width: 84%;
+
+      .value-next-level {
+        transform: translate(0, 15px);
+      }
+
+      .progress-body {
+        padding: 4px 4px 4px 38px;
+      }
+    }
+
+    .progress-body {
+      @extend %posr;
+      padding: 4px 4px 4px 46px;
+      height: 28px;
+      text-align: center;
+    }
+
+    .value-xp,
+    .value-next-level {
+      @extend %posa;
+      @include fz(13);
+      font-weight: 600;
+      top: 50%;
+      text-shadow: 0 0px 6px rgba($color02, 0.35);
+    }
+
+    .value-level-ref {
+      @extend %posa;
+      transform: translate(0, -52%);
+      right: -30px;
+      top: 50%;
+
+      .link {
+        @include fz(24);
+        color: $color01;
+      }
+    }
+
+    .value-xp {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .value-next-level {
+      transform: translate(0, -50%);
+      right: 10px;
+    }
+
+    .value {
+      &.element {
+        &--egg {
+          background-image: linear-gradient(
+            126deg,
+            rgb(120 44 244) 0%,
+            rgb(217 156 252) 50%,
+            rgb(56 28 183) 100%
+          );
+          box-shadow: 0 0 5px rgb(119 43 244);
+        }
+
+        &--water {
+          background-image: linear-gradient(
+            126deg,
+            rgb(21 96 178) 0%,
+            rgb(187 249 255) 50%,
+            rgb(0 26 167) 100%
+          );
+        }
+
+        &--wood {
+          background-image: linear-gradient(
+            126deg,
+            rgb(80 42 19) 0%,
+            rgb(253 207 10) 50%,
+            rgb(135 62 12) 100%
+          );
+        }
+
+        &--fire {
+          background-image: linear-gradient(
+            126deg,
+            rgb(196 13 0) 0%,
+            rgb(255 226 1) 50%,
+            rgb(168 0 1) 100%
+          );
+        }
+
+        &--earth {
+          background-image: linear-gradient(
+            126deg,
+            rgba(31, 144, 36, 1) 0%,
+            rgba(175, 240, 99, 1) 50%,
+            rgba(31, 144, 36, 1) 100%
+          );
+        }
+
+        &--wind {
+          background-image: linear-gradient(
+            126deg,
+            rgb(32 72 56) 0%,
+            rgb(237 255 248) 50%,
+            rgb(29 47 40) 100%
+          );
+        }
+
+        &--metal {
+          background-image: linear-gradient(
+            126deg,
+            rgb(103 0 237) 0%,
+            rgb(238 173 245) 50%,
+            rgb(99 0 234) 100%
+          );
+        }
+      }
+
+      background-image: linear-gradient(
+        126deg,
+        rgba(31, 144, 36, 1) 0%,
+        rgba(175, 240, 99, 1) 50%,
+        rgba(31, 144, 36, 1) 100%
+      );
+
+      background-size: 400% auto;
+      display: block;
+      height: 100%;
+      min-width: 22px;
+      border-radius: 16px;
+      box-shadow: 0 0 5px rgba(175, 240, 99, 0.6);
+      animation: move 12s linear infinite;
+      animation-fill-mode: forwards;
+    }
+
+    .validator-element {
+      @extend %posa;
+      @include size(64px);
+      left: 0;
+      max-width: 64px;
+      top: 50%;
+      transform: scale(1) translateY(-50%);
+      padding: 4px;
+      background-image: radial-gradient(
+        at center top,
+        rgb(154, 177, 199) 0%,
+        rgb(26, 36, 47) 100%
+      );
+      border-radius: 50%;
+      box-shadow: $bs01;
+    }
+
+    .image-element {
+      @extend %posa;
+      left: 0;
+      max-width: 56px;
+      top: 50%;
+      transform: scale(1.35) translateY(-50%);
+
+      &.Water {
+        transform: scale(1.35) translateY(-37%);
+      }
+      &.Fire {
+        transform: scale(1.35) translateY(-45%);
+      }
+      &.Wood {
+        transform: scale(1.35) translateY(-35%);
+      }
+      &.Metal {
+        transform: scale(1.35) translateY(-35%);
+      }
+      &.Earth {
+        transform: scale(1.35) translateY(-35%);
+      }
+      &.Wind {
+        transform: scale(1.35) translateY(-35%);
+      }
+    }
+  }
+}
+
+.img-container {
+  @include posa(10);
+  @include size(79px 120px);
+  .overlay {
+    @include posa;
+    @include size(100%);
+    background-color: red;
+  }
+}
+.test {
+  display: block;
+}
+
+.dragon {
+  &--traits-view {
+    @include posr(4);
+    @extend %animate;
+  }
+  &--show-traits {
+    transform: scale(1);
+  }
+
+  &--hide-traits {
+    transform: scale(1.45);
+  }
+
+  &--original-egg {
+    @include posr(2);
+    @extend %animate;
+    background: linear-gradient(to top, rgb(21 47 78), rgb(8 7 8));
+    text-align: center;
+    width: 336px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0px 0px 25px -1px #f5f5e7;
+
+    &.dragon--hide-traits {
+      transform: scale(0.85);
+    }
+
+    .option-item--thumbnail {
+      cursor: default;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 25px -1px #5bc7f1;
+    }
+  }
+
+  &--footer-section {
+    @extend %animate;
+    text-align: center;
+    margin: 24px auto 0;
+
+    &.should--move-offset {
+      transform: translateY(100px);
+    }
+
+    .button--toggle-dragon-traits {
+      @include fz(13);
+      min-width: 186px;
+    }
+  }
+}

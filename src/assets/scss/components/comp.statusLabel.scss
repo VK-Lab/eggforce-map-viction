@@ -1,0 +1,16 @@
+.status {
+  &--root {
+    @include generateNFTStatus();
+    @include posr(1);
+
+    &.compact {
+      margin-right: 16px;
+    }
+
+    .img.lighting-bolt {
+      @include posa;
+      right: -27px;
+      top: 0;
+    }
+  }
+}

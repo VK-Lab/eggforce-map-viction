@@ -1,0 +1,107 @@
+/* Import Bootstrap */
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1064px,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+/* Import variables */
+@import 'configs/eggforce.variables.scss';
+
+/* Import mixins */
+@import 'mixins/mixin.global.scss';
+@import 'mixins/mixin.typography.scss';
+@import 'mixins/mixin.buttonStyles.scss';
+@import 'mixins/mixin.animation.scss';
+@import 'mixins/mixin.mediaQuery.scss';
+@import 'mixins/mixin.backgroundUrl.scss';
+@import 'mixins/mixin.nft.scss';
+
+/* Import components */
+@import 'components/comp.heading.scss';
+@import 'components/comp.button.scss';
+@import 'components/comp.table.scss';
+@import 'components/comp.decorImage.scss';
+@import 'components/comp.connector.scss';
+@import 'components/comp.input.scss';
+@import 'components/comp.select.scss';
+@import 'components/comp.header.scss';
+@import 'components/comp.footer.scss';
+@import 'components/comp.modal.scss';
+@import 'components/comp.optionItem.scss';
+@import 'components/comp.announcement.scss';
+@import 'components/comp.progressController.scss';
+@import 'components/comp.customScrollbar.scss';
+@import 'components/comp.storyImage.scss';
+@import 'components/comp.chapterFullscreen.scss';
+@import 'components/comp.chapters.scss';
+@import 'components/comp.validator.scss';
+@import 'components/comp.eggCracker.scss';
+@import 'components/comp.eggCrackerReward.scss';
+@import 'components/comp.worldmap.scss';
+@import 'components/comp.homepageUniqueStrength.scss';
+@import 'components/comp.homepageMembers.scss';
+@import 'components/comp.homepagePartners.scss';
+@import 'components/comp.confetti.scss';
+@import 'components/comp.worldmapComponents.scss';
+@import 'components/comp.profileUser.scss';
+@import 'components/comp.profileBadge.scss';
+@import 'components/comp.toast.scss';
+@import 'components/comp.gridNFT.scss';
+@import 'components/comp.emptyList.scss';
+@import 'components/comp.claimAndMint.scss';
+@import 'components/comp.NFTCollection.scss';
+@import 'components/comp.NFTDetailView.scss';
+@import 'components/comp.connectWalletModal.scss';
+@import 'components/comp.blockExplorerButton.scss';
+@import 'components/comp.quickBuyModal.scss';
+@import 'components/comp.balanceChip.scss';
+@import 'components/comp.packagePurchase.scss';
+@import 'components/comp.qaSupport.scss';
+@import 'components/comp.newIconNotificationModal.scss';
+@import 'components/comp.purchaseConfirmPackage';
+@import 'components/comp.notificationSidebar.scss';
+@import 'components/comp.listGroup.scss';
+@import 'components/comp.compactModal.scss';
+@import 'components/comp.eggHatchingModal.scss';
+@import 'components/comp.cardInfo.scss';
+@import 'components/comp.helper.scss';
+@import 'components/comp.buttonUniques.scss';
+@import 'components/comp.installmentPaymentItem.scss';
+@import 'components/comp.happyHourModal';
+@import 'components/comp.partner.scss';
+@import 'components/comp.eggMergingModule.scss';
+@import 'components/comp.NFTCollectionFilters.scss';
+@import 'components/comp.loading.scss';
+@import 'components/comp.accountNFTHeader.scss';
+@import 'components/comp.leaderboards.scss';
+@import 'components/comp.statusLabel.scss';
+@import 'components/comp.countdown.scss';
+@import 'components/comp.SNCregistration.scss';
+@import 'components/comp.SNCpage.scss';
+@import 'components/comp.SNCFlowDiagram.scss';
+@import 'components/comp.fireflies.scss';
+@import 'components/comp.ledgerAccountsSelector.scss';
+@import 'components/comp.dragonManagementModule.scss';
+@import 'components/comp.SNCswapping.scss';
+@import 'components/comp.CSPRCalculator.scss';
+
+/* Import game */
+@import 'components/game.luckyMoney.scss';
+@import 'components/game.flippingCard.scss';
+
+/* Import page */
+@import 'pages/homepage.scss';
+@import 'pages/story.scss';
+@import 'pages/gameplay.scss';
+@import 'pages/sncPage.scss';
+@import 'pages/dragonsPage.scss';
+
+/* Import page */
+@import 'events/event.index.scss';
+
+/* Import custom style */
+@import 'dev';

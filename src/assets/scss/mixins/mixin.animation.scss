@@ -1,0 +1,82 @@
+%animate {
+  backface-visibility: hidden;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+%animate-border {
+  @extend %animate;
+  @extend %posr;
+  color: $color02;
+
+  &:after {
+    @extend %animate;
+    @extend %posa;
+    @include size(0 3px);
+    background-color: transparent;
+    bottom: -1px;
+    content: '';
+    left: 0;
+  }
+}
+
+%animate-border-hover {
+  &.active,
+  &:hover {
+    background-color: transparent;
+    color: $color07;
+
+    &:after {
+      background: linear-gradient(90.1deg, $color06 -7.6%, $color08 105.43%);
+      border-radius: 0px 51px;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.01);
+  }
+}
+
+@keyframes pulse-big {
+  to {
+    box-shadow: 0 0 0 24px rgba(255, 255, 255, 0.01);
+  }
+}
+
+// @keyframes pulse {
+//   0% {
+//     opacity: 1;
+//     transform: none;
+//   }
+//   50% {
+//     opacity: 0.8;
+//     transform: scale(0.8);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
+
+@keyframes eggpulse {
+  10% {
+    transform: scale(0.6);
+  }
+}
+
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+    transition: none;
+  }
+}
+
+.fade:not(.show) {
+  opacity: 0;
+}

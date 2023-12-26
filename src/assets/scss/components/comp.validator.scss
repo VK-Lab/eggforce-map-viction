@@ -1,0 +1,98 @@
+.validators--selector {
+  .react-select {
+    &--control {
+      padding: 0;
+    }
+  }
+}
+.validator-selector {
+  &--root {
+    @include flexRow;
+    align-items: center;
+    border-radius: 10px;
+    color: $color01;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &--icon {
+    @include flexRow;
+    @include size(52px);
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+
+    .icon {
+      max-height: 54px;
+      max-width: 46px;
+    }
+  }
+
+  &--body {
+    flex: 0 0 auto;
+    width: calc(100% - 120px);
+    margin-left: 8px;
+  }
+
+  &--dropdown-icon {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 50px;
+
+    .icon-down {
+      @include size(18px);
+    }
+  }
+
+  &--search-input.custom {
+    @include fz(16);
+    min-height: 58px;
+    color: $color01;
+  }
+}
+
+.validator-item {
+  &--upper {
+    @extend %posr;
+  }
+
+  &--lower {
+    @include fz(14);
+    letter-spacing: 0.25px;
+  }
+
+  &--name {
+    @include posr;
+    @include fz(16);
+    font-weight: 600;
+    display: inline-block;
+    padding-right: 18px;
+
+    &.verified {
+      &:before {
+        @include posa;
+        @include size(14px);
+        background-color: $color09;
+        border-radius: 50%;
+        content: '';
+        right: 0;
+        top: 4px;
+      }
+      &:after {
+        @include posa;
+        @include size(14px);
+        @include fz(12);
+        color: $color01;
+        content: '\2713';
+        right: -1px;
+        top: 3px;
+      }
+    }
+  }
+}

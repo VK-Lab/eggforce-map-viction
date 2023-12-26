@@ -1,0 +1,92 @@
+.ledger-accounts-selector--modal {
+}
+
+.ledger-accounts-selector {
+  &--wrapper {
+    .section--title {
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      margin-top: 32px;
+      text-align: center;
+    }
+  }
+}
+
+.ledger-accounts {
+  &--count {
+    @include size(20px);
+    @include fz(13);
+    color: $color01;
+    text-align: center;
+    background-color: $modalBackground;
+    text-align: center;
+    display: inline-block;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    margin-left: 6px;
+  }
+
+  &--list {
+    height: 280px;
+    padding: 16px;
+    background-color: #030b22;
+    border-radius: 12px;
+  }
+
+  &--item {
+    background-image: url('../../images/package--silver.webp');
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+    height: 46px;
+    color: $color01;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &.is-selected {
+      .option-item--text {
+        @extend .use-gradient-01;
+        color: $modalBackground;
+      }
+    }
+
+    .option-item--thumbnail {
+      display: none;
+      align-items: center;
+      flex: 0 0 auto;
+      visibility: hidden;
+    }
+
+    .is-ledger-account-item {
+      flex: 1 1 0px;
+      width: auto;
+      max-width: calc(100% - 76px);
+      margin-bottom: 0;
+    }
+
+    .option-item--text {
+      background-color: rgba($modalBackground, 0.75);
+      padding: 4px 8px;
+      border-radius: 16px;
+      max-width: calc(100% - 75px);
+      margin-left: 35px;
+    }
+  }
+
+  &--selected {
+    @include fz(26);
+    flex: 0 0 auto;
+    width: 50px;
+    transform: translateY(-3px);
+
+    .icon-selected {
+      width: 36px;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.link--discord {
+  color: $color08;
+  text-decoration: none;
+
+  &:hover {
+    color: $color08;
+  }
+}
+
+.heading-common {
+  @extend %posr;
+
+  &.has-arrow {
+    padding-left: 36px;
+
+    &:after {
+      @include posa;
+      @include size(26px 22px);
+      background: url('../../images/icon--arrow-2.webp');
+      content: '';
+      background-size: 100%;
+      background-repeat: no-repeat;
+      top: -2px;
+      left: 0;
+    }
+  }
+}
+
+.heading-superb {
+  @extend .font2;
+  @include fz(55);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(38);
+  }
+}
+
+.heading-1 {
+  @extend .font2;
+  @include fz(45);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(32);
+  }
+}
+
+.heading-2 {
+  @extend .font2;
+  @include fz(35);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(23);
+  }
+}
+
+.heading-3 {
+  @extend .font2;
+  @include fz(30);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(18);
+  }
+}
+
+.heading-4 {
+  @extend .font2;
+  @include fz(24);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(16);
+  }
+}
+
+.heading-5 {
+  @extend .font2;
+  @include fz(20);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(15);
+  }
+}
+
+.heading-6 {
+  @extend .font2;
+  @include fz(17);
+  font-weight: 800;
+
+  @include query-mobile {
+    @include fz(14);
+  }
+}

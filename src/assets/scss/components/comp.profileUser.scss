@@ -1,0 +1,157 @@
+.profile-avatar {
+  &--container {
+    @include flexRow;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &--balance-and-notifications {
+    @include flexRow;
+    align-items: center;
+    border-radius: 32px;
+    background-color: $modalBackground;
+    column-gap: 8px;
+    padding: 6px 8px;
+  }
+
+  &--submenu {
+    @include flexRow;
+    align-items: center;
+    color: $color01;
+    column-gap: 16px;
+    flex-flow: row nowrap;
+    margin-right: 8px;
+
+    @include min-md {
+      margin-right: 16px;
+    }
+  }
+
+  &--dropdown {
+    &-toggle {
+      &:after {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    &-menu {
+      background-color: $color03;
+      overflow: hidden;
+      border-radius: 10px;
+      padding: 0;
+      min-width: 220px;
+    }
+
+    &-item {
+      @extend .font2;
+      @extend %animate;
+      @include fz(16);
+      color: white;
+      line-height: 1;
+      padding: 14px 14px;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        @include fz(20);
+        margin-right: 12px;
+      }
+
+      &.wallet-name {
+        background-image: linear-gradient(
+          to right,
+          #1f9024,
+          #3c9828,
+          #52a12c,
+          #65a931,
+          #78b136
+        );
+        cursor: default;
+
+        .icon {
+          max-width: 24px;
+          margin-right: 8px;
+
+          .img-wallet {
+            max-width: 100%;
+            width: 22px;
+          }
+        }
+
+        &:hover {
+          color: $color01;
+        }
+      }
+
+      &.publicKey {
+        .truncated-text {
+          max-width: 160px;
+        }
+      }
+
+      &.disconnect {
+        background-color: $color11;
+      }
+
+      &:hover:not(.wallet-name) {
+        color: $color10;
+        background-color: $color04;
+      }
+    }
+  }
+
+  &--wrapper {
+    @include size(64px);
+
+    @include min-md {
+      @include size(80px);
+
+      &:after {
+        border: 2px solid $color01;
+      }
+    }
+
+    &.is--locked {
+      &:after {
+        background-color: $color08;
+      }
+    }
+
+    &.is--unlocked {
+      &:after {
+        background-color: $color13;
+      }
+    }
+
+    &:after {
+      @extend %posa;
+      @include size(16px);
+      content: '';
+      right: 6px;
+      top: 2px;
+      border-radius: 50%;
+      background-color: $color05;
+      border: 3px solid $color01;
+      box-shadow: $bs01;
+    }
+  }
+
+  &--image {
+    // max-width: 100%;
+    // padding: 5px;
+    // background-color: white;
+    // background-image: radial-gradient(
+    //   ellipse farthest-corner at center top,
+    //   #dfc688 0%,
+    //   #422b24 100%
+    // );
+    // background-image: radial-gradient(
+    //   ellipse farthest-corner at center top,
+    //   #9ab1c7 0%,
+    //   #1a242f 100%
+    // );
+    // border-radius: 50%;
+    // box-shadow: $bs01;
+  }
+}

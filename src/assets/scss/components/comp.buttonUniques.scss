@@ -1,0 +1,132 @@
+.btn--stop-hatching,
+.btn--start-hatching {
+  text-shadow: 0 0px 6px rgba($color02, 0.35);
+}
+
+.btn--claim-snc {
+  width: 124px;
+}
+
+.btn-installemnt-payment--action {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  width: 110px;
+
+  &.sz-small {
+    min-height: 36px;
+  }
+
+  &.btn-installemnt-payment--pay {
+    margin-right: 8px;
+  }
+
+  &.detail-view {
+    width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 46px;
+  }
+}
+
+.btn--confirm-purchase-package {
+  @include fz(20);
+  @extend .font2;
+  font-weight: 600;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  min-width: 60%;
+}
+
+.btn--start-merging {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 24px;
+  width: 260px;
+}
+
+.btn--apply-egg-filters {
+  width: 180px;
+}
+
+.btn--snc-register {
+  display: block;
+  width: 100%;
+
+  &.sticky {
+    min-height: 56px;
+    width: 280px;
+  }
+
+  @include min-md {
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.btn--close-modal {
+  @extend %animate;
+  @include posa;
+  @include size(48px);
+  @include onHoldAndScaleDown;
+  right: 16px;
+  top: 16px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  @include min-md {
+    @include size(56px);
+    top: -16px;
+    right: -16px;
+  }
+
+  &.for--off-canvas {
+    @include size(48px);
+    top: 2px;
+    right: 2px;
+  }
+  &[disabled] {
+    img {
+      filter: grayscale(1);
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.btn--hatch-selecting-modal {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  @include min-md {
+    max-width: 340px;
+  }
+}
+
+.btn--connect-via-ledger {
+  width: 180px !important;
+}
+
+.btn--enter-real-Eggforce-world {
+  column-gap: 12px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .icon {
+    max-width: 64px;
+    transform: scale(1.5);
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .label {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,43 @@
+.empty-data--wrapper {
+  @extend %posr;
+  min-height: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-slot {
+  &--wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 1rem;
+    width: 480px;
+  }
+
+  &--item {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+
+    img {
+      display: block;
+      max-width: 100%;
+      filter: grayscale(1) blur(2px);
+    }
+  }
+
+  &--overlay {
+    @include size(520px);
+    @include posa(5);
+    background-color: rgba($color03, .5);
+    backdrop-filter: blur(2px);
+  }
+
+  &--body {
+    @include posa(5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

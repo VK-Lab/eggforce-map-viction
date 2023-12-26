@@ -1,0 +1,129 @@
+.world-element {
+  position: fixed;
+  z-index: 1;
+
+  &.has-menu {
+    .btn--icon-leaderboard {
+      img {
+        width: 36px;
+        transform: scale(2);
+        margin-right: 22px;
+      }
+
+      span {
+        @include fz(14);
+      }
+    }
+  }
+
+  &--connect-button {
+    right: 5px;
+    top: 22px;
+
+    @include min-md {
+      right: 25px;
+      top: 25px;
+    }
+  }
+
+  &--secondary-menu {
+    top: 37px;
+    left: 240px;
+  }
+
+  &--sidebar {
+    left: 10px;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--mint-wrapper {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.btn--connect-wallet {
+  .icon-wallet {
+    @include size(32px auto);
+
+    &.wallet--casperDash {
+      position: relative;
+      width: 48px;
+      right: -12px;
+    }
+
+    &.wallet--casperSigner {
+      width: 28px;
+    }
+
+    &.wallet--casperWallet {
+      width: 32px;
+    }
+
+    &.wallet--ledger {
+      width: 40px;
+    }
+  }
+}
+
+.btn--open-mint-modal {
+  @extend .font2;
+  @include fz(24);
+  @extend .use-gradient-01;
+  line-height: 1;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+  padding: 0px 48px;
+  min-width: 240px;
+
+  @include query-mobile {
+    @include fz(18);
+    height: 46px;
+    min-width: 200px;
+  }
+
+  span {
+    position: relative;
+    top: 3px;
+  }
+
+  &:hover {
+    color: rgba($color01, 0.85);
+  }
+
+  .icon {
+    width: 46px;
+    transform: scale(1.65) translateX(-6px) translateY(-6px);
+  }
+}
+
+.map-sidebar {
+  &--root {
+    width: 72px;
+  }
+}
+
+.button-tooltip {
+  &--content {
+    @extend .font2;
+    @include fz(20);
+  }
+}
+
+.leaflet-interactive.map-overlay {
+  @extend %animate;
+  stroke: transparent;
+  fill: transparent;
+  opacity: 0;
+
+  @at-root .marker-dragging & {
+    opacity: 1;
+    fill-opacity: 1;
+    fill: rgba($modalBackground, 0.25);
+  }
+}

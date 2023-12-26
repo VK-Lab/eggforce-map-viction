@@ -1,0 +1,457 @@
+.installment-plan--introduction {
+  backdrop-filter: blur(2.5px) grayscale(0.5);
+}
+
+.purchase-review--root {
+  .content-wrapper {
+    @include fz(13);
+    color: rgba($color01, 0.75);
+    margin-top: 24px;
+
+    .helper {
+      margin-bottom: 4px;
+    }
+
+    li {
+      margin-bottom: 4px;
+
+      strong {
+        color: $color05;
+      }
+    }
+  }
+}
+
+.purchase-custom-pack {
+  &.is-mobile {
+    @include query-mobile {
+      .modal-body {
+        flex-flow: column nowrap;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .modal-footer--bottom {
+        position: sticky;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &--overlay {
+    @include posa;
+    @include size(100%);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+  }
+}
+
+.purchase-custom-pack--root {
+  .modal-body {
+    @include posr;
+  }
+
+  @include query-mobile {
+    .primary-heading {
+      @include fz(26);
+    }
+
+    .secondary-heading {
+      @include fz(22);
+    }
+  }
+}
+
+.purchase-as-gift {
+  &--wrapper {
+    margin-bottom: 24px;
+
+    .btn--checkbox-type {
+      margin-bottom: 8px;
+    }
+
+    .checkbox--present {
+      transform: scale(1.5) translateX(4px);
+      width: 42px;
+    }
+  }
+}
+
+.payment-details--summary {
+  @extend %animate;
+  min-height: 400px;
+
+  &.no-minheight {
+    min-height: auto;
+  }
+
+  &.is--out-of-stock {
+    .purchase-installment--info,
+    .table-package--wrapper.installment-table {
+      filter: blur(1.5px);
+      pointer-events: none;
+    }
+  }
+}
+
+.purchase-payment-method {
+  &--wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 0;
+
+    &.is-installment-payment {
+      margin-bottom: 0;
+    }
+
+    .payment {
+      &--full,
+      &--bnpl {
+        &.is-unselected {
+          background-color: $color24;
+        }
+      }
+
+      &--full {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &--bnpl {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        &.is-unselected {
+          .bnpl--text {
+            color: $color13;
+          }
+        }
+
+        .bnpl--text {
+          @include fz(13);
+          align-items: center;
+          color: $color12;
+          display: flex;
+          margin-top: 6px;
+
+          span {
+            @include fz(16);
+          }
+        }
+      }
+    }
+  }
+}
+
+.purchase-installment {
+  &--info {
+    &.is--out-of-stock {
+      filter: blur(1.5px);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+
+      .heading {
+        margin-bottom: 0;
+      }
+
+      .logo--melem--wrapper {
+        @include posr;
+        top: -5px;
+        margin-left: auto;
+      }
+    }
+
+    .each-table-block {
+      &:not(:last-child) {
+        margin-bottom: 28px;
+      }
+
+      .mini-header {
+        .heading {
+          @include fz(17);
+          color: $color08;
+        }
+      }
+    }
+  }
+}
+
+.purchase-installment-helper {
+  text-align: right;
+  margin-bottom: 24px;
+
+  .btn--what-is-purchase-installment {
+    @include fz(13);
+    text-decoration: underline;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 24px;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.table-package--wrapper {
+  .table-wrapper {
+    margin-bottom: 24px;
+    padding: 0;
+    border-radius: 16px;
+  }
+
+  &.installment-table {
+    margin-top: 30px;
+
+    .header {
+      @include flexRow;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .heading {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn--toggle {
+      border: none;
+      background-color: transparent;
+      color: $color01;
+      margin-left: auto;
+
+      .icon {
+        @extend %animate;
+        margin-right: 6px;
+
+        &.is-compact {
+          transform: rotate(180deg);
+        }
+      }
+
+      .text {
+        @include fz(13);
+      }
+    }
+  }
+
+  &.empty-data {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 260px;
+    opacity: 0.75;
+  }
+}
+
+.monthly-payment--summary {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 12px;
+  background-color: $color22;
+  border-radius: 24px;
+  flex: 0 0 auto;
+  width: auto;
+
+  .text {
+    @include fz(14);
+    opacity: 0.75;
+    text-align: left;
+    margin-right: 8px;
+
+    span {
+      display: block;
+    }
+
+    .bottom {
+      @include fz(13);
+    }
+  }
+
+  .value {
+    align-items: center;
+    background-color: #121f47;
+    border-radius: 13px;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 8px;
+    margin-left: auto;
+
+    .icon {
+      width: 24px;
+      margin-right: 6px;
+    }
+
+    .amount {
+      @include fz(18);
+      font-weight: 600;
+    }
+  }
+}
+
+.installment-plan--details {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0 1rem;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+.installment-plan {
+  &--review-wrapper {
+    @include posr;
+  }
+
+  &--out-of-stock-plan {
+    @include posa;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--progress-wrapper {
+    @include posr;
+
+    .installment-plan--package {
+      @include flexRow;
+      justify-content: space-between;
+      background-position: center center;
+      min-height: 56px;
+      padding: 0;
+      margin-top: 46px;
+      margin-bottom: 60px;
+    }
+
+    .payment-point {
+      @include posr;
+
+      &--value {
+        display: flex;
+        align-items: center;
+        padding: 4px 12px;
+        border-radius: 16px;
+        background-color: rgba($color02, 0.85);
+        font-weight: 600;
+        line-height: 1;
+
+        .icon {
+          width: 16px;
+          margin-right: 6px;
+        }
+      }
+
+      &--urh {
+        @include posa;
+        align-items: center;
+        display: flex;
+        left: 50%;
+        top: -45px;
+        transform: translateX(-50%);
+        width: 110px;
+
+        .btn-pulse {
+          margin-right: 6px;
+        }
+
+        .text {
+          line-height: 1;
+          position: relative;
+          top: 2px;
+        }
+      }
+
+      &--preview {
+        @include posr;
+        height: 100%;
+      }
+
+      .info {
+        &:before {
+          @include posa;
+          @include size(2px 12px);
+          background-color: #4b5163;
+          content: '';
+          left: 50%;
+          top: 44px;
+          transform: translateX(-50%);
+        }
+      }
+
+      .datetime {
+        @include posa;
+        color: $color21;
+        left: 50%;
+        top: calc(100% + 36px);
+        width: 96px;
+        transform: translateX(-50%);
+      }
+
+      &.point--1 {
+        left: 20px;
+
+        .datetime {
+          width: auto;
+        }
+
+        .payment-point--urh {
+          .text {
+            color: $color01;
+          }
+        }
+
+        .payment-point--value {
+          background-color: rgba($color13, 1);
+        }
+
+        .text {
+          color: $modalBackground;
+        }
+      }
+
+      &.point--3 {
+        right: 20px;
+      }
+    }
+  }
+}
+
+.helper-field--wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  .helper-wrapper {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+
+    .helper {
+      margin: 0;
+    }
+  }
+
+  .use-current-key--wrapper {
+    flex: 0 0 auto;
+    width: 140px;
+    margin-left: auto;
+
+    .use-current-key--button {
+      @include fz(13);
+      margin-top: 0;
+    }
+  }
+}

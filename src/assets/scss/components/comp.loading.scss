@@ -1,0 +1,40 @@
+.global {
+  &--loading {
+    @include size(100%);
+    @include flexRow;
+    backdrop-filter: grayscale(1);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+  }
+
+  &--loading-mini {
+    @include flexRow;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &.is--horizontal {
+      .icon--loading {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 8px;
+        align-items: center;
+      }
+    }
+
+    .icon--loading {
+      text-align: center;
+
+      .label {
+        @include fz(13);
+        display: block;
+        color: rgba($color01, 0.5);
+        font-weight: 500;
+      }
+    }
+  }
+}

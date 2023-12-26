@@ -1,0 +1,94 @@
+.installments-payment--root {
+  .heading {
+    margin-bottom: 24px;
+  }
+}
+
+.installment-payment-item {
+  &--root {
+    cursor: pointer;
+    margin-bottom: 24px;
+    padding: 24px;
+    border-radius: 16px;
+    background-color: $color22;
+
+    .info--date {
+      opacity: 0.5;
+    }
+
+    &.is-overdue {
+      background-color: #6b1818;
+    }
+
+    &.is-cancelled {
+      background-color: $color18;
+    }
+
+    &.finished {
+      // background-color: $color13;
+    }
+  }
+}
+
+.installment-plan--refund-review,
+.installment-plan--detail {
+  .section--footer {
+    @include flexRow;
+    gap: 24px;
+    margin-top: 60px;
+
+    .btn-installemnt-payment--pay {
+      order: 2;
+    }
+
+    .btn-installemnt-payment--refund {
+      order: 1;
+    }
+  }
+}
+
+.installment-plan--refund-review {
+  .modal-dialog {
+    max-width: 480px;
+  }
+}
+
+.installment-plan--detail {
+  .modal-dialog {
+    max-width: 620px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .heading {
+      margin-bottom: 0;
+    }
+
+    .logo--melem--wrapper {
+      position: relative;
+      top: -5px;
+      margin-left: auto;
+    }
+  }
+}
+
+.installment-plan {
+  &--tokens-wrapper {
+    margin-top: 1.5rem;
+    width: 100%;
+
+    .heading {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--tokens-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+

@@ -1,0 +1,49 @@
+.modal--egg-collections {
+  .modal-dialog {
+    max-width: 1560px;
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .modal-content {
+    min-height: 70vh;
+    background-color: #0c1839;
+    background-image: url('../../images/bg--nft-detail.png'),
+      url('../../images/img--grave-background.webp');
+    background-position: top center, center bottom;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+  }
+
+  .icon--loading {
+    @include posa;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $color08;
+
+    .spinner-border {
+      @include size(48px);
+    }
+  }
+
+  .for--nft-grid-item {
+    .icon--loading {
+      .spinner-border {
+        @include size(32px);
+      }
+    }
+  }
+}
+
+.collection--filter-wrapper {
+  display: flex;
+  align-items: center;
+
+  .label {
+    @include fz(14);
+    margin-right: 8px;
+  }
+}

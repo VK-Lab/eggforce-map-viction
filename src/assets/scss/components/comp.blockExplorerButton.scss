@@ -1,0 +1,63 @@
+.btn-pulse {
+  &.is--completed {
+    $pulseColor: $color13;
+    background-color: $pulseColor;
+    box-shadow: 0 0 0 0 lighten($pulseColor, 0.35);
+  }
+
+  &.is--pending {
+    $pulseColor: $color08;
+    background-color: $pulseColor;
+    box-shadow: 0 0 0 0 lighten($pulseColor, 0.35);
+  }
+
+  &.is--failed {
+    $pulseColor: $color05;
+    background-color: $pulseColor;
+    box-shadow: 0 0 0 0 lighten($pulseColor, 0.35);
+  }
+}
+
+.btn--view-hash-explorer {
+  @extend .btn--style-3;
+  @include fz(12);
+  min-height: auto;
+  padding: 8px 12px;
+  border-width: 2px;
+
+  &.size--small {
+    padding: 4px 8px;
+  }
+
+  &.is--embedded {
+    border-color: $color17;
+  }
+
+  &:hover {
+    background-color: $modalBackground;
+    border-color: $color03;
+    color: $color01;
+  }
+
+  .btn-pulse {
+    margin-right: 8px;
+  }
+
+  .icon {
+    width: 60px;
+    margin-right: 10px;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &.profile-bar {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    border-color: #6b30d2;
+    background-color: #442082;
+  }
+}

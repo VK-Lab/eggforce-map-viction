@@ -1,0 +1,25 @@
+.eggForce-toast--container {
+  @include fz(15);
+  min-width: 400px;
+
+  @include query-mobile {
+    min-width: 320px;
+  }
+}
+
+.custom-toast--container {
+  @include fz(14);
+  box-shadow: $bs01;
+
+  a {
+    color: $color03;
+  }
+}
+
+.toast--close {
+  @extend %posa;
+  right: 0;
+  top: 0;
+  border: none;
+  background-color: transparent;
+}

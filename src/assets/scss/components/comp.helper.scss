@@ -1,0 +1,25 @@
+.helper-wrapper {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.helper {
+  @include fz(13);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+  // margin: 1rem 0 2rem;
+  text-align: left;
+  opacity: 0.75;
+
+  strong {
+    color: $color08;
+  }
+
+  .icon--helper {
+    margin-right: 8px;
+  }
+
+  .icon--cspr {
+    width: 68px;
+  }
+}

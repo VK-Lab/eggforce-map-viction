@@ -1,0 +1,65 @@
+
+.number-reward {
+  @extend %animate;
+  @include size(200px);
+  @extend .use-gradient-01;
+  text-shadow: 0 6px 12px rgb(0, 0, 0, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 200px;
+}
+
+.string-reward {
+  @extend .number-reward;
+  @include fz(20);
+
+  &.long-text {
+    @include fz(16);
+  }
+}
+
+.multi-items-reward {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+  
+  .heading {
+    @include fz(28);
+  }
+  
+  .parent.first {
+    margin-bottom: 36px;
+  }
+
+  .each-reward-item {
+    @extend %animate;
+    @extend .use-gradient-02;
+    @include fz(13);
+    color: $color03;
+    padding: 6px 18px;
+    margin: .45rem;
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 16px;
+
+    &.style-2 {
+      @extend .use-gradient-03;
+      color: $color01;
+    }
+
+    &.number {
+      @include size(60px);
+      align-items: center;
+      border-radius: 50%;
+      display: inline-flex;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+}

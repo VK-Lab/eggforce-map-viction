@@ -1,0 +1,143 @@
+.claim-modal {
+  &--root {
+    .modal-header,
+    .modal-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    @at-root .gmodal--root#{&} {
+      .modal-content {
+        background-image: url('../../images/hero-image--mobile.webp');
+        background-position: center top;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        max-width: 680px;
+
+        &:before {
+          @include size(100% 80%);
+          @include posa(1);
+          bottom: 0;
+          content: "";
+          background: rgb(7,26,82);
+          background: linear-gradient(0deg, rgba(7, 26, 82, 0.9710259104) 0%, rgb(7, 26, 82) 10%, rgba(7, 26, 82, 0) 85%, rgba(7, 26, 82, 0) 100%);
+        }
+
+        &:after {
+          @include posa(1);
+          @include size(100%);
+          content: "";
+          background: rgba($color03, .45);
+          backdrop-filter: blur(4px);
+        }
+      }
+    }
+
+  }
+
+  &--header {
+    @include flexRow;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  &--body {
+    p {
+      margin-bottom: 0;
+    }
+
+    .heading {
+      margin-bottom: 0;
+      line-height: 1;
+
+      &.primary {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &--icon {
+    @include fz(72);
+    line-height: 1;
+    margin: 0;
+    color: $color08;
+    font-weight: bold;
+  }
+
+  &--buttons {
+    @include flexRow;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    button {
+      margin: 0 10px;
+    }
+  }
+
+  &--social {
+    margin-top: 32px;
+    margin-bottom: 20px;
+
+    p {
+      @include fz(15);
+      color: #e4e4e4;
+      margin-bottom: 10px;
+    }
+
+    path,
+    circle {
+      @extend %animate;
+    }
+
+    path {
+      fill: $color03;
+    }
+
+    circle {
+      fill: $color07;
+    }
+
+    svg {
+      &:hover {
+        circle {
+          fill: $color08;
+        }
+
+        path {
+          fill: $color06;
+        }
+      }
+    }
+
+    .tw {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
+
+  &--remaining-slot {
+    @include fz(22);
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+}
+
+.acc-claimed {
+  @include flexRow;
+  align-items: center;
+  justify-content: center;
+  opacity: .65;
+  padding: 4px 0 8px;
+
+  p {
+    margin-right: 14px;
+  }
+
+  &--address {
+    width: 220px;
+  }
+}

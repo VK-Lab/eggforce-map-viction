@@ -1,0 +1,107 @@
+.account-nft-header {
+  &--root {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.account-nft-header-stats-overlay {
+  &--root {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .btn--egg-stats {
+      @include size(58px);
+      @extend %animate;
+      border-radius: 8px;
+      border: none;
+      background-color: transparent;
+      background-image: url('../../images/ele--metal.png');
+      background-size: 100%;
+      color: $color01;
+
+      img {
+        max-width: 100%;
+        &.egg {
+          transform: scale(1.2);
+        }
+
+        &.close {
+          width: 34px;
+        }
+      }
+    }
+  }
+}
+
+.nft-panel-stats {
+  &--wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgba($color02, 0.65);
+    border-radius: 16px 0 0 16px;
+    row-gap: 8px;
+    padding: 8px;
+  }
+}
+
+.nft-header-item {
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+
+  &.snc {
+    .img {
+      transform: scale(1);
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &.egg {
+    .img {
+      transform: scale(1.2) translateY(1px);
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &:not(:last-child) {
+    // margin-right: 8px;
+  }
+
+  .icon-wrapper {
+    @include size(42px);
+    @include posr(5);
+    background: linear-gradient(
+      109.6deg,
+      rgb(20, 30, 48) 11.2%,
+      rgb(36, 59, 85) 91.1%
+    );
+    border: 2px solid #47576b;
+    border-radius: 50%;
+    box-shadow: inset 0px -1px 6px 2px rgba(0, 0, 0);
+  }
+
+  .img {
+    width: 36px;
+    transform: scale(1.2);
+  }
+
+  .value {
+    @include fz(14);
+    @include posr(1);
+    font-weight: 600;
+    background: $modalBackground;
+    padding: 2px 6px 2px 16px;
+    left: -12px;
+    border-radius: 16px;
+    min-width: 48px;
+    text-shadow: 1px 2px 1px #731e0d;
+    text-align: center;
+  }
+}

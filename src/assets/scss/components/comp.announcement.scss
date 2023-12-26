@@ -1,0 +1,47 @@
+.gmodal--root {
+  &.annoucements--modal {
+    .modal-dialog { 
+      max-width: 1280px;
+    }
+
+    .modal-content {
+      background-image: url('../../images/img--grave-background.webp');
+      background-position: center bottom;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-color: #0c1839;
+    }
+
+    .announcements--list-item {
+      position: sticky;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.announcenents-block {
+  @include fz(16);
+  @include posr;
+  
+  .heading {
+    color: $color08;
+    font-weight: 500;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 120px;
+
+    &:after {
+      @include posa;
+      @include size(52px);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background: url('../../images/icon--treeSelvyn.webp');
+      bottom: 50px;
+      content: '';
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

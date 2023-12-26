@@ -1,0 +1,240 @@
+$durationReward: 4s;
+.egg-cracker {
+  &--root {
+    @extend %posr;
+    min-height: 560px;
+    border: 1px solid transparent;
+    max-width: 600px;
+    margin: 2.5rem auto;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &--egg {
+    @extend %posa;
+    animation: shaking 5s infinite;
+    // transform: translateY(0) scale(1);
+    transform-origin: bottom center;
+    left: 0;
+    top: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    width: 180px;
+  }
+
+  &--hammer {
+    @extend %posa;
+    @extend %animate;
+    // animation: hammerHit 3s infinite;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 160px;
+    transform: translate(160px, -30%) rotate(-20deg);
+    transform-origin: center 85%;
+
+    &.hit {
+      transform: translate(160px, -30%) rotate(-50deg);
+    }
+  }
+
+  &--reward {
+    @extend %posa;
+    @include size(200px);
+    border-radius: 50%;
+    transform-origin: bottom center;
+    transition-duration: 1.5s;
+    left: 0;
+    top: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+
+    &.oval {
+      @include size(90% 300px);
+    }
+
+    &.jump {
+      animation: jump $durationReward infinite,
+        border-flicker $durationReward infinite;
+    }
+
+    &.jump-only {
+      animation: jump $durationReward infinite;
+    }
+  }
+
+  &--reward-shadow {
+    @extend %posa;
+    @include size(200px 20px);
+    animation: shadow $durationReward infinite;
+    background: rgba($color02, 0.2);
+    box-shadow: 0 0 10px rgba($color02, 0.2);
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 50px;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.egg-crack--path {
+  @include posa(15);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 24px;
+  top: 50%;
+  transform: translate(16px, -100%);
+
+  svg {
+    width: 100%;
+  }
+}
+
+.btn-mint {
+  &--wrapper {
+    @extend %posa;
+    bottom: 20px;
+    width: 160px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--action {
+    width: 100%;
+  }
+
+  &--reset {
+    @extend %posa;
+    @include size(48px);
+    @include fz(36);
+    padding: 0;
+    left: 50px;
+    bottom: 40px;
+  }
+}
+
+@keyframes hammerHit {
+  0%,
+  30% {
+    transform: translate(160px, -30%) rotate(-20deg);
+  }
+
+  25%,
+  50% {
+    transform: translate(160px, -30%) rotate(-40deg);
+  }
+
+  100% {
+    transform: translate(160px, -30%) rotate(-20deg);
+  }
+}
+
+$shakeDegree: 2deg;
+
+@keyframes shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  1% {
+    transform: rotate($shakeDegree);
+  }
+  2% {
+    transform: rotate(0deg);
+  }
+  3% {
+    transform: rotate(-$shakeDegree);
+  }
+  4% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  11% {
+    transform: rotate($shakeDegree);
+  }
+  12% {
+    transform: rotate(0deg);
+  }
+  13% {
+    transform: rotate(-$shakeDegree);
+  }
+  14% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  21% {
+    transform: rotate($shakeDegree);
+  }
+  22% {
+    transform: rotate(0deg);
+  }
+  23% {
+    transform: rotate(-$shakeDegree);
+  }
+  24% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: -30px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    box-shadow: 0px 0px 0px rgba($color08, 0.25),
+      0px 0px 48px rgba($color08, 0.15), 0px 0px 32px rgba($color08, 0.15),
+      0px 0px 8px rgba($color08, 0.25);
+  }
+  50% {
+    box-shadow: 0px 0px 0px rgba($color08, 0.25),
+      0px 0px 4px rgba($color08, 0.45), 0px 0px 8px rgba($color08, 0.45),
+      0px 0px 12px rgba($color08, 0.25);
+  }
+  100% {
+    box-shadow: 0px 0px 0px rgba($color08, 0.25),
+      0px 0px 48px rgba($color08, 0.15), 0px 0px 32px rgba($color08, 0.15),
+      0px 0px 8px rgba($color08, 0.25);
+  }
+}

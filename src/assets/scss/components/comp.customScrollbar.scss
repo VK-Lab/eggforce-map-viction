@@ -1,0 +1,40 @@
+
+.eggforce-custom-scrollbar {
+  &--root {
+    &.rcs-custom-scroll {
+      .rcs-inner-handle {
+        background-color: $color07;
+        border-radius: 6px;
+        height: 100%;
+        margin-top: 0;
+      }
+    }
+
+    &.is--always-visible {
+      *::-webkit-scrollbar {
+        visibility: hidden;
+      }
+
+      .rcs-custom-scrollbar {
+        scrollbar-color: transparent transparent;
+        background-color: $color01;
+        border-radius: 6px;
+        opacity: 1;
+        width: 8px;
+        right: 0;
+      }
+
+      .rcs-outer-container {
+        position: relative;
+        padding-right: 16px;
+
+        .rcs-positioning {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

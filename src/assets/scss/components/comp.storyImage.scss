@@ -1,0 +1,33 @@
+/* Story thumbnail */
+.story-thumb--image {
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 1.25rem;
+  max-width: 860px;
+  width: 98%;
+  
+  @include min-md {
+    &.left {
+      float: left;
+      margin-right: 1.25rem;
+      width: 35%;
+    }
+
+    &.right {
+      float: right;
+      margin-left: 1.25rem;
+      width: 35%;
+    }
+
+    &.full {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &.center {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

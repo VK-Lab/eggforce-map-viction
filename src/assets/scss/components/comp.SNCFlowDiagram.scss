@@ -1,0 +1,485 @@
+.snc-gameplay-helper {
+  &--root {
+    @extend %posr;
+    backdrop-filter: blur(12px);
+    background-color: rgba($color02, 0.3);
+    border-radius: 100px;
+    max-width: 1040px;
+    padding: 25px 5px;
+
+    @include min-md {
+      padding: 50px;
+    }
+  }
+
+  &--top,
+  &--bottom {
+    @extend %posr;
+    width: 96%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    // border: 2px solid red;
+  }
+
+  &--top {
+    height: 200px;
+  }
+
+  &--bottom {
+    height: 480px;
+  }
+
+  &--lines {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+}
+
+.snc-gameplay-line {
+  @extend %posa;
+  @include size(3px 100%);
+  background: linear-gradient(
+    -90deg,
+    $color08 0%,
+    $color07 32.28%,
+    $color06 66.65%,
+    $color05 99.98%
+  );
+
+  &.is-horz {
+    @include size(100% 3px);
+    width: calc(100% - 190px - 6%);
+
+    @include min-md {
+      width: calc(100% - 280px - 6%);
+    }
+  }
+
+  &:before {
+    @include posa;
+    @include size(24px);
+    content: '';
+    background-image: url('../../images/timeline--arrow.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .snc-gameplay-line-text {
+    @extend %posa;
+  }
+
+  &.line {
+    &-1 {
+      height: 35%;
+      left: 0;
+      transform: translate(45px, 140px);
+      transform-origin: right top;
+
+      &:before {
+        transform: rotate(90deg);
+        left: -12px;
+        right: auto;
+        bottom: -10px;
+      }
+
+      .snc-gameplay-point.point-pulse {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .snc-gameplay-line-text {
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      @include min-md {
+        left: 0;
+        transform: translate(45px, 140px);
+      }
+    }
+
+    &-2 {
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-46%);
+
+      &:before {
+        right: -6px;
+        bottom: -10px;
+      }
+
+      .snc-gameplay-point.point-pulse {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .snc-gameplay-line-text {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(30%);
+      }
+
+      @include min-md {
+        transform: translateX(-50%);
+      }
+    }
+
+    &-5 {
+      top: 70px;
+      left: 50%;
+      transform: translateX(-46%);
+
+      &:before {
+        left: -6px;
+        bottom: -10px;
+        transform: rotate(180deg);
+      }
+
+      .snc-gameplay-point.point-pulse {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .snc-gameplay-line-text {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(30%);
+      }
+
+      @include min-md {
+        transform: translateX(-50%);
+      }
+    }
+
+    &-3 {
+      height: 32%;
+      right: 0;
+      transform-origin: left top;
+      transform: translate(-60px, 160px);
+
+      &:before {
+        transform: rotate(-90deg);
+        right: -11px;
+        top: -12px;
+      }
+
+      .snc-gameplay-point.point-pulse {
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      .snc-gameplay-line-text {
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      @include min-md {
+        height: 36%;
+        transform: translate(-50px, 146px);
+      }
+    }
+
+    &-4 {
+      bottom: -10px;
+      height: 100px;
+      left: 0%;
+      transform: translateX(45px);
+      z-index: 5;
+
+      &:before {
+        transform: rotate(90deg);
+        right: -10px;
+        bottom: -10px;
+      }
+    }
+  }
+}
+
+.snc-gameplay-point {
+  @extend %posa;
+  text-align: center;
+
+  &.point-pulse {
+    @include size(24px);
+    z-index: -1;
+    animation: pulse-big 2.5s infinite;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 0 $color08;
+
+    &.white {
+      box-shadow: 0 0 0 0 $color01;
+    }
+
+    &.purple {
+      box-shadow: 0 0 0 0 $color04;
+    }
+  }
+
+  &.point {
+    &-1 {
+      // transform: translateX(-50%);
+      left: 10px;
+      top: 0;
+      z-index: 15;
+    }
+
+    &-2 {
+      left: 0;
+      top: 30px;
+    }
+
+    &-3 {
+      bottom: 20px;
+      left: 0;
+      width: 110px;
+      text-align: center;
+
+      .icon-eggforce {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &-4 {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    &-5 {
+      top: 30px;
+      right: 20px;
+    }
+  }
+
+  @include min-md {
+    &.point {
+      &-2 {
+        left: 0;
+        top: 30px;
+        // transform: translateX(-50%);
+      }
+
+      &-3 {
+        bottom: 20px;
+        left: 0;
+        width: auto;
+      }
+
+      &-4 {
+        bottom: 20px;
+        right: 0;
+      }
+
+      &-5 {
+        top: 30px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.snc-gameplay-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  & + .text {
+    @include fz(13);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0;
+
+    @include min-md {
+      @include fz(14);
+    }
+  }
+
+  &.icon {
+    &-text-3 {
+      width: 45px;
+    }
+
+    &-text-1 {
+      // @include size(54px);
+      width: 96px;
+      transform: rotate(90deg) scale(1.5);
+    }
+
+    &-text-2 {
+      @include size(32px);
+    }
+
+    &-wallet {
+      @include size(42px 52px);
+
+      @include min-md {
+        @include size(55px 65px);
+      }
+    }
+
+    &-dragon {
+      @include size(84px);
+      margin-bottom: 0.25rem;
+
+      @include min-md {
+      }
+    }
+
+    &-eggforce {
+      border-radius: 0;
+      width: 56px;
+
+      @include min-md {
+        width: 66px;
+      }
+    }
+
+    &-snc-minted {
+      width: 50px;
+
+      @include min-md {
+        width: 70px;
+      }
+    }
+
+    &-egg-hatch {
+      @include size(55px);
+
+      @include min-md {
+        @include size(95px);
+      }
+    }
+  }
+}
+
+.snc-gameplay--how-to {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  .column {
+    flex: 0 0 auto;
+    width: 30%;
+    text-align: center;
+  }
+
+  .square-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.75rem;
+  }
+
+  .text {
+    @include fz(13);
+    font-weight: 500;
+  }
+
+  @include min-md {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+
+    .square-wrapper {
+      max-width: 140px;
+    }
+    .column {
+      &.leaft {
+        .square-wrapper {
+          @include posr;
+
+          &:after,
+          &:before {
+            @include posa;
+            @include size(42px 31px);
+            background: url('../../images/icon--arrow-2.webp');
+            content: '';
+            background-size: 100%;
+            background-repeat: no-repeat;
+            top: 50px;
+          }
+
+          &:after {
+            left: -60px;
+          }
+
+          &::before {
+            right: -60px;
+          }
+        }
+      }
+    }
+
+    .text {
+      @include fz(16);
+      margin: 0.75rem 0 0;
+      font-weight: 600;
+    }
+  }
+
+  @include min-desktop {
+    .square-wrapper {
+      max-width: 190px;
+    }
+
+    .column {
+      &.leaft {
+        .square-wrapper {
+          &:after,
+          &:before {
+            top: 72px;
+          }
+
+          &:after {
+            left: -90px;
+          }
+
+          &::before {
+            right: -90px;
+          }
+        }
+      }
+    }
+
+    .text {
+      @include fz(18);
+    }
+  }
+}
+
+.square-item {
+  position: relative;
+  border-radius: 18px;
+  padding-bottom: 100%;
+  background: transparent;
+  border: solid 2px $color07;
+
+  @include min-md {
+    border-width: 4px;
+  }
+
+  .image {
+    @include size(86%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

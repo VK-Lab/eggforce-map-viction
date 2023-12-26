@@ -1,0 +1,264 @@
+.invalid-feedback {
+  @include fz(13);
+}
+
+.ginput-group {
+  .form-label {
+    @include fz(14);
+  }
+}
+
+.ginput {
+  &--root {
+    @include fz(14);
+    background-color: $color14;
+    border-width: 2px;
+    border-color: $color14;
+    border-radius: 24px;
+    min-height: 50px;
+    color: $color10;
+    padding: 0 16px;
+    font-weight: 500;
+
+    &:focus {
+      background-color: $color14;
+      border-color: $color20;
+      box-shadow: none;
+      color: $color10;
+    }
+
+    &::placeholder {
+      color: rgba($color10, 0.5);
+      opacity: 1; /* Firefox */
+    }
+
+    &::-ms-input-placeholder {
+      /* Edge 12 -18 */
+      color: rgba($color10, 0.5);
+    }
+
+    @include query-mobile {
+      min-height: 40px;
+    }
+
+    &.read-only {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+.gsearch {
+  &--root {
+    @extend %posr;
+  }
+
+  &--input {
+    padding: 0 56px 0 16px;
+  }
+
+  &--search-btn {
+    @extend %posa;
+    @include size(48px);
+    right: 6px;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    background-image: url('../../images/icon--search.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 26px 26px;
+    border: none;
+  }
+}
+
+.gtoken-input {
+  &--root {
+    @extend %posr;
+  }
+
+  &--body {
+    @extend %posr;
+  }
+
+  &--right-section {
+    @include posa;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    right: 8px;
+    top: 0;
+  }
+
+  &--icon {
+    @include fz(14);
+    @include flexRow;
+    align-items: center;
+    bottom: 0;
+    color: $color21;
+    height: 50px;
+    top: 0;
+
+    &.cspr {
+      width: 68px;
+
+      &.is--compact-version {
+        width: 25px;
+      }
+    }
+
+    &.xp,
+    &.snc {
+      .logo {
+        max-height: 32px;
+      }
+    }
+
+    .logo {
+      max-height: 22px;
+      margin-right: 6px;
+
+      & + span {
+        min-width: 32px;
+      }
+    }
+  }
+
+  &--max-btn {
+    @include fz(14);
+    @include size(48px);
+    color: $color01;
+    top: 1px;
+    bottom: 0;
+    background-color: transparent;
+    background-size: 26px 26px;
+    border: none;
+    font-weight: 500;
+  }
+
+  &--header {
+    @include fz(13);
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px;
+
+    .left-info {
+      margin-right: auto;
+    }
+
+    .right-info {
+      margin-left: auto;
+    }
+
+    .exchange-rate {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// Radio global
+
+.radio {
+  @extend %posr;
+  cursor: pointer;
+
+  input[type='radio'] {
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  &.is-button-like {
+    .custom-radio {
+      display: none;
+      visibility: hidden;
+
+      &-text {
+        @extend %animate;
+        @include fz(13);
+        border: 1px solid $color20;
+        padding: 4px 10px;
+        border-radius: 16px;
+      }
+    }
+
+    input[type='radio']:checked {
+      & + .custom-radio + .custom-radio-text {
+        background: $color01;
+        color: $modalBackground;
+      }
+    }
+  }
+
+  .custom-radio-text {
+    @include fz(14);
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    text-align: left;
+
+    .custom-radio-text--col-1 {
+      flex-basis: 40px;
+      padding: 0 13px 0 6px;
+    }
+
+    .custom-radio-text--col-2 {
+      flex-grow: 1;
+      word-break: break-all;
+    }
+  }
+
+  .custom-radio {
+    @include size(24px);
+    background: $color01;
+    border-radius: 50%;
+    border: 1px solid #b6b6b6;
+    bottom: 0;
+    display: inline-block;
+    margin: auto 0;
+    transition: all 180ms ease;
+  }
+
+  .icon-radio-check {
+    @include size(12px);
+    background-color: $color01;
+    display: block;
+    background-size: cover;
+    border-radius: 50%;
+    bottom: 0;
+    left: 0px;
+    margin: 4px auto 0;
+    top: 0;
+    right: 0;
+    transform: scale(0);
+    transition: all 180ms ease;
+  }
+
+  input[type='radio']:checked {
+    & + .custom-radio .icon-radio-check {
+      background-color: $color03;
+      transform: scale(1);
+    }
+  }
+}
+
+.form-control--block {
+  margin-bottom: 22px;
+}
+
+.input-label {
+  @include fz(14);
+  font-weight: 600;
+  margin-bottom: 5px;
+}

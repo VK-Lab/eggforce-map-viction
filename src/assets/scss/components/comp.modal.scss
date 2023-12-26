@@ -1,0 +1,188 @@
+.modal-90w {
+  width: 90%;
+  max-width: none !important;
+}
+
+.modal--heading {
+  margin-bottom: 45px;
+}
+
+.gmodal--root {
+  &.is-blur-overlay {
+    backdrop-filter: blur(2.5px) grayscale(1);
+  }
+
+  &.annoucements--modal {
+    .modal-dialog {
+      max-width: 1280px;
+    }
+  }
+
+  &.notification {
+    .modal-content {
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &.newyear {
+    &.game-lixi {
+      .modal-dialog {
+        max-width: 1280px;
+      }
+    }
+
+    &.game-maze {
+      .modal-dialog {
+        max-width: 1280px;
+      }
+    }
+
+    &.game-card-flipping {
+      &.error {
+        .modal-dialog {
+          max-width: 560px;
+        }
+      }
+
+      .modal-dialog {
+        max-width: 1680px;
+        width: 96%;
+      }
+    }
+
+    &.game-lixi,
+    &.game-maze {
+      .modal-content {
+        background: $color14;
+        background: linear-gradient(0deg, $color24 0%, $color22 100%);
+        // background: rgb(110 3 3);
+        // background: linear-gradient(
+        //   0deg,
+        //   #ce0708 0%,
+        //   rgba(117, 30, 36, 1) 100%
+        // );
+      }
+    }
+
+    .modal-dialog {
+      max-width: 840px;
+    }
+
+    .modal-header {
+      padding-top: 0;
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+  }
+
+  &.modal--height-90h {
+    .modal-content {
+      min-height: 90vh;
+    }
+  }
+
+  &.generic-modal,
+  &.purchase-review,
+  &.purchase-custom-pack,
+  &.purchase-result {
+    backdrop-filter: blur(2.5px) grayscale(0.5);
+  }
+
+  &.purchase-custom-pack,
+  &.purchase-review {
+    .modal-dialog {
+      max-width: 600px;
+    }
+
+    .modal-content {
+      @extend %animate;
+    }
+  }
+
+  &.egg-evolution-result,
+  &.egg-merge-result,
+  &.adhoc-result-event--modal,
+  &.purchase-result {
+    .modal-dialog {
+      max-width: 460px;
+    }
+  }
+
+  .modal-header {
+    border-bottom-color: transparent;
+    padding-bottom: 0;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  .modal-body {
+    padding-top: 16px;
+    min-height: 0;
+  }
+
+  .modal-content {
+    background: $modalBackground;
+    font-weight: 500;
+    min-height: 0;
+  }
+}
+
+.notification-modal {
+  &--box-wrapper {
+    background-color: transparent;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--box {
+    background-color: $modalBackground;
+    padding: 16px 24px 32px;
+    border-radius: 12px;
+
+    .icon {
+      @include fz(96);
+      line-height: 1;
+      margin: 0;
+      color: $color08;
+      font-weight: bold;
+    }
+
+    .header {
+      @include flexRow;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+
+    .body {
+      text-align: center;
+
+      p {
+        margin-bottom: 24px;
+      }
+
+      .heading {
+        margin-bottom: 16px;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.compact-modal--network-fee-wrapper {
+  margin-top: 36px;
+  text-align: left;
+
+  .heading {
+    margin-bottom: 4px !important;
+  }
+}

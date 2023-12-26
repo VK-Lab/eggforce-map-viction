@@ -1,0 +1,80 @@
+.btn--trigger-egg-filters {
+  @include posr;
+  @include size(40px);
+  border: none;
+  color: $color10;
+  background-color: transparent;
+  margin-right: 12px;
+
+  .circle {
+    @include posa;
+    @include fz(12);
+    @include size(20px);
+    background-color: $color05;
+    box-shadow: $bs05;
+    border-radius: 50%;
+    color: $color08;
+    line-height: 20px;
+    right: -6px;
+    top: -8px;
+  }
+
+  .icon-filter {
+    @include size(36px);
+  }
+}
+
+.egg-collection-filters--modal {
+  .modal-body {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.egg-collection-filters--wrapper {
+  .filters--block {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    .heading {
+      margin-bottom: 16px;
+    }
+  }
+
+  .filters-data {
+    @include flexRow;
+    flex-flow: row wrap;
+    gap: 10px;
+
+    &.space--even {
+      justify-content: space-between;
+    }
+  }
+}
+
+.egg-filters--wrapper {
+  @include size(380px 480px);
+  background-color: $modalBackground;
+  box-shadow: $bs05;
+  overflow: auto;
+  padding: 24px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 100000;
+
+  .primary--heading {
+    margin-bottom: 30px;
+  }
+
+  .btn--close-egg-filters {
+    @include posa(5);
+    @include size(26px);
+    right: 12px;
+    top: 12px;
+    border: none;
+    background-color: transparent;
+    color: $color10;
+  }
+}

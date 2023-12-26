@@ -1,0 +1,262 @@
+.offcanvas {
+  @include query-mobile {
+    &.offcanvas.offcanvas-end {
+      width: 100%;
+    }
+  }
+}
+
+.mobile--offcanvas {
+  background-color: $color03;
+
+  .mobile--enter-world {
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      margin-top: 24px;
+      width: 100%;
+    }
+  }
+}
+
+.header--navbar-wrapper {
+  @extend %animate;
+  background-color: rgba($color03, 0.5);
+  box-shadow: 0px 11px 47px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+
+  &.transparent {
+    background-color: transparent;
+    backdrop-filter: blur(32px);
+  }
+
+  &.is-small {
+    background-color: $color03;
+    box-shadow: 0px 11px 47px rgba(0, 0, 0, 0.3);
+
+    &.transparent {
+      background-color: transparent;
+      backdrop-filter: blur(32px);
+    }
+
+    .header--primary {
+      min-height: 100px;
+    }
+
+    .header--primary-logo {
+      @include size(200px 100px);
+      transform: translateY(8px) scale(1.15);
+
+      @include query-mobile-small {
+        @include size(130px 100px);
+        transform: translateY(8px) scale(1.05);
+      }
+    }
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.header--primary {
+  @extend %animate;
+  min-height: 110px;
+  max-width: $maxHeaderFooterContainer;
+
+  @include min-md {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.nav--buy-nft {
+  @extend %animate;
+  @include fz(16);
+  @include onHoldAndScaleDown;
+  display: block;
+  line-height: 56px;
+  margin: 32px auto 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 75%;
+  transition-property: transform, color;
+  will-change: transform, color;
+
+  &.inside {
+    width: 75%;
+  }
+
+  &.outside {
+    width: 135px;
+    margin: 0 0 0 auto;
+
+    @include query-mobile {
+      @include fz(14);
+      line-height: 42px;
+      width: auto;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(0.98);
+    box-shadow: 0px 0px 25px -1px $color08;
+    color: $color02;
+    outline: none;
+  }
+
+  &:active:focus {
+    box-shadow: 0px 0px 15px -1px $color08;
+  }
+
+  @include min-desktop {
+    display: inline-flex;
+    margin: 0 0 0 1.5rem;
+    width: 135px;
+
+    &.inside {
+      width: 135px;
+    }
+  }
+}
+
+.offcanvas-body {
+  background-image: linear-gradient(
+    180deg,
+    #071a52 0%,
+    rgba(234, 115, 93, 0.42) 54.17%,
+    rgba(255, 179, 86, 0.54) 100%
+  );
+
+  @include min-desktop {
+    background: transparent;
+  }
+}
+
+.navbar-toggler {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.header--mobile-toggler {
+  @extend %posr;
+  color: $color01;
+  width: 60px;
+
+  span {
+    @include size(100% 3px);
+    border-radius: 8px;
+    background-color: $color01;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.header--primary-logo {
+  @extend %animate;
+  @include size(200px 110px);
+  display: block;
+  transform: translateY(12px) scale(1.25);
+  background-image: url($logoPrimary);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: -9999px;
+  margin: 0;
+  padding: 0;
+
+  @include query-mobile {
+    @include size(175px 100px);
+    transform: translateY(-5px) translateY(22px) scale(1.25);
+  }
+
+  @include query-mobile-small {
+    @include size(130px 100px);
+    transform: translateY(-8px) translateY(16px) scale(1.25);
+  }
+}
+
+.ef-menu {
+  &--primary {
+    .nav-link {
+      @extend %animate-border-hover;
+      @extend %animate-border;
+      @include fz(16);
+      align-items: center;
+      color: $color01;
+      display: flex;
+      font-weight: 700;
+      justify-content: center;
+      padding-bottom: 24px;
+      padding-top: 24px;
+
+      & > span {
+        @extend %animate;
+      }
+
+      &.active {
+        color: $color07;
+      }
+
+      @include query-mobile {
+        & > span {
+          @include posr;
+
+          &:after,
+          &:before {
+            @include posa;
+            @include size(8px);
+            transform: scale(0);
+            border-radius: 50%;
+            bottom: 0;
+            content: '';
+            margin-bottom: auto;
+            margin-top: auto;
+            top: 0;
+          }
+        }
+
+        &.active,
+        &:hover {
+          &:after {
+            @include hidden;
+          }
+
+          & > span {
+            &:before,
+            &:after {
+              transform: scale(1);
+            }
+
+            &:after {
+              background-color: $color07;
+              left: -18px;
+            }
+
+            &:before {
+              background-color: $color08;
+              right: -18px;
+            }
+          }
+        }
+      }
+
+      @include min-desktop {
+        padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      }
+
+      @include large-desktop {
+        @include fz(18);
+      }
+    }
+  }
+}
+
+.offcanvas-header {
+  .btn-close {
+    @include size(32px);
+    @include fz(24);
+  }
+}

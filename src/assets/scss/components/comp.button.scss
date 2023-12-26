@@ -1,0 +1,439 @@
+.btn-swiper-nav {
+  &:after {
+    color: $color02;
+  }
+}
+
+.button-style {
+  @extend %animate;
+  @include fz(16);
+  @include onHoldAndScaleDown;
+  align-items: center;
+  border-radius: 16px;
+  border: none;
+  color: $color02;
+  display: inline-flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  min-height: 46px;
+  padding: 0 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include min-md {
+    min-height: 56px;
+  }
+
+  &:hover {
+    color: $color02;
+  }
+
+  &.sz-xsmall {
+    @include fz(14);
+    min-height: 24px;
+
+    @include min-md {
+      min-height: 36px;
+    }
+  }
+
+  &.sz-small {
+    min-height: 34px;
+
+    @include min-md {
+      min-height: 46px;
+    }
+  }
+
+  &.sz-xl {
+    min-height: 46px;
+
+    @include min-md {
+      min-height: 58px;
+    }
+  }
+
+  &.sz-xxl {
+    min-height: 60px;
+
+    @include min-md {
+      min-height: 75px;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &[disabled],
+  &.disabled {
+    background: rgb(128 128 128);
+    cursor: not-allowed;
+    color: $color18;
+
+    &:not(.sz-small) {
+      @include generateButtonShadow(
+        rgb(93, 93, 93),
+        rgb(91, 91, 91),
+        rgb(128 128 128),
+        rgb(91, 91, 91),
+        rgb(110, 110, 110),
+        rgb(128 128 128)
+      );
+    }
+  }
+}
+
+.use-gradient-01 {
+  background-image: linear-gradient(
+    to right,
+    #f9f871,
+    #ffd55a,
+    #ffb251,
+    #fc9051,
+    #ef6f57
+  );
+  // background: linear-gradient(126.64deg, $color08 12.35%, $color06 93.23%);
+
+  &:hover {
+    box-shadow: $bs03;
+  }
+}
+
+.use-gradient-02 {
+  background-image: linear-gradient(
+    to right bottom,
+    #f9f871,
+    #ffd55a,
+    #ffb251,
+    #fc9051,
+    #ef6f57
+  );
+  // background: linear-gradient(180deg, $color08 0%, $color07 80.36%);
+  box-shadow: $bs03;
+}
+
+.use-gradient-03 {
+  background: linear-gradient(
+    126deg,
+    rgba(108, 40, 104, 1) 0%,
+    rgba(255, 179, 86, 1) 100%
+  );
+
+  &:hover {
+    box-shadow: $bs03;
+  }
+}
+
+// Hatching
+.use-gradient-04 {
+  background-image: linear-gradient(
+    to right,
+    #1f9024,
+    #3c9828,
+    #52a12c,
+    #65a931,
+    #78b136
+  );
+
+  &:not(.ignore-shadow-style) {
+    @include generateDisabledStateButton;
+    @include generateButtonShadow(
+      #3c9828,
+      #186e1c,
+      #78b136,
+      #16791b,
+      #98c466,
+      #3c9828
+    );
+    &:hover {
+      box-shadow: 0px 0px 0 0px #3c9828, -1px 0px 2px 2px #186e1c,
+        0px 3px 1px 4px #78b136, 1px 2px 3px 4px #16791b,
+        1px 2px 1px 4px #98c466, 0px 6px 3px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &.sz-small {
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Danger
+.use-gradient-05 {
+  background-image: linear-gradient(
+    to right,
+    #6c2830,
+    #7e2e3c,
+    #913449,
+    #a33a58,
+    #b64168
+  );
+
+  &:not(.ignore-shadow-style) {
+    @include generateDisabledStateButton;
+    @include generateButtonShadow(
+      #b64168,
+      #9a2d51,
+      #cd507a,
+      #9a2d51,
+      #e95f8d,
+      #5a1f28
+    );
+
+    &.sz-small {
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// https://getcssscan.com/css-buttons-examples
+// Normal
+.btn--style-1 {
+  @extend .button-style;
+
+  &:not(.ignore-shadow-style) {
+    @include generateDisabledStateButton;
+    @include generateButtonShadow(
+      rgb(204 68 42),
+      rgb(97, 48, 33),
+      rgb(255, 198, 90),
+      rgb(120, 59, 23),
+      rgb(197, 107, 82),
+      rgb(183 59 35)
+    );
+  }
+  transition-duration: 200ms;
+  background: linear-gradient(
+    to right,
+    rgba(239, 111, 87, 1) 0%,
+    rgba(255, 178, 81, 1) 25%,
+    rgba(255, 213, 90, 1) 50%,
+    rgba(252, 144, 81, 1) 75%,
+    rgba(239, 111, 87, 1) 100%
+  );
+  background-size: 200% auto;
+  color: white;
+  text-shadow: 0 0px 6px rgba($color02, 0.25);
+
+  & > .text-shadow {
+    text-shadow: 2px 2px 1px #e78700, -2px 2px 1px #e78700, 2px -2px 1px #e78700,
+      -2px -2px 1px #e78700, 0px 2px 1px #e78700, 0px -2px 1px #e78700,
+      0px 4px 1px #c96100, 2px 4px 1px #c96100, -2px 4px 1px #c96100;
+  }
+
+  &:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-decoration: none;
+  }
+}
+
+// With lightshadow visible
+.btn--style-2 {
+  @extend .button-style;
+  @extend .use-gradient-02;
+}
+
+// Outline
+.btn--style-3 {
+  @extend .button-style;
+  background-color: transparent;
+  border: 3px solid rgba($color01, 0.75);
+  color: rgba($color01, 0.75);
+
+  &:hover {
+    border-color: $color07;
+    color: $color07;
+  }
+
+  &[disabled],
+  &.disabled {
+    border-color: $color18;
+
+    &:hover {
+      color: $color18;
+    }
+  }
+}
+
+// Text alike, no outline
+.btn--style-4 {
+  @extend .button-style;
+  background-color: transparent;
+  border: 3px solid transparent;
+  color: $color01;
+
+  &:hover {
+    color: $color01;
+    box-shadow: $bs03;
+  }
+}
+
+// Hatching
+.btn--style-5 {
+  @extend .button-style;
+  @extend .use-gradient-04;
+  color: $color01;
+
+  &:hover {
+    color: $color01;
+  }
+}
+
+// Danger
+.btn--style-6 {
+  @extend .button-style;
+  @extend .use-gradient-05;
+  color: $color01;
+
+  &:hover {
+    color: $color01;
+  }
+}
+
+.btn--style-7 {
+  @extend .button-style;
+  background: linear-gradient(
+    to right,
+    #0c1839 0%,
+    #2e4275 25%,
+    #1e377a 50%,
+    #2e4275 75%,
+    #0c1839 100%
+  );
+  background-size: 200% auto;
+  color: white;
+  box-shadow: $bs05; //-1px 3px 38px -1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0px 6px rgba($color02, 0.25);
+
+  &:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn--icon {
+  @include fz(32);
+  padding: 0;
+  width: 56px;
+
+  &.large {
+    @include size(72px);
+  }
+
+  &.use--elemental-background {
+    @include posr;
+    @extend %animate;
+    background-color: transparent;
+    background-image: url('../../images/ele--metal.png');
+    background-size: 100%;
+    color: $color01;
+
+    &:hover {
+      color: #f6cb73;
+      transform: scale(1.15) rotate(-2deg);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      @include posa;
+      @include fz(10);
+      color: $color10;
+      background-color: $modalBackground;
+      border: 2px solid $color10;
+      border-radius: 16px;
+      bottom: -10px;
+      padding: 4px 6px;
+    }
+
+    &.btn--view-collection {
+      .label {
+        width: 100px;
+      }
+    }
+
+    &.btn--merging-hub {
+      .label {
+        width: 90px;
+      }
+    }
+  }
+}
+
+.btn--checkbox-type {
+  @include fz(14);
+  @include flexRow;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: $color01;
+
+  .icon {
+    @include fz(18);
+  }
+
+  .label {
+    margin-left: 6px;
+    font-weight: 500;
+  }
+
+  &[disabled],
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-with-icon {
+  @include flexRow;
+  @include fz(14);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background-color: $color20;
+  color: $color01;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-weight: 500;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+
+  .icon {
+    max-width: 36px;
+    margin-right: 6px;
+  }
+}
+
+.btn--as-tab:not(.ignore-shadow-style) {
+  @include fz(14);
+  min-height: 40px;
+  border-radius: 10px 32px 10px 32px;
+  border-bottom-width: 3px;
+  opacity: 0.85;
+
+  &:hover,
+  &.active {
+    border-radius: 10px 32px 10px 32px;
+    position: relative;
+    opacity: 1;
+  }
+
+  &.active {
+    @extend .use-gradient-04;
+  }
+}

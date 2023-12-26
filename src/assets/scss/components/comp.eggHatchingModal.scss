@@ -1,0 +1,97 @@
+.egg-hatching--modal {
+  backdrop-filter: blur(2.5px) grayscale(0.5);
+
+  .modal-header {
+    z-index: 5;
+  }
+
+  .modal-dialog {
+    max-width: 720px;
+  }
+
+  .modal-content {
+    min-height: 500px;
+    background-image: url('../../images/bg--level-up-eggs.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .row {
+    &--validator {
+      @include posr(5);
+    }
+
+    &--amount {
+      @include posr(3);
+    }
+  }
+}
+
+.egg-hatching {
+  &--overlay {
+    @include posa;
+    @include size(100%);
+    align-items: center;
+    background-color: rgba($modalBackground, 0.5);
+    display: flex;
+    height: calc(100% + 33px);
+    justify-content: center;
+    left: 0;
+    top: -33px;
+  }
+
+  &-panel--wrapper {
+    background-color: $color23;
+    box-shadow: $bs05;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  &-panel {
+    background-color: $color22;
+    margin-bottom: 16px;
+
+    &--validator {
+      @include min-md {
+        margin-bottom: 24px;
+      }
+    }
+
+    &--box {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      row-gap: 14px;
+
+      &.dragon-boxes {
+        .box-info--root {
+          flex: 0 0 125px;
+          word-break: break-all;
+
+          &.box--dna {
+            flex: 0 0 280px;
+          }
+        }
+      }
+
+      @include min-md {
+        row-gap: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      .fullwidth {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+
+      .heading {
+        @include fz(20);
+        margin-bottom: 3px;
+      }
+    }
+  }
+}

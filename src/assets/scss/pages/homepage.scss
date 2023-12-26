@@ -1,0 +1,1235 @@
+.homepage-block--with-grave-background {
+  @extend %posr;
+  background-image: url('../../images/img--grave-background.webp');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-size: 100%;
+
+  &:after {
+    @include size(100% 80%);
+    @extend %posa;
+    content: '';
+    background: rgb(7, 26, 82);
+    background: linear-gradient(
+      180deg,
+      rgba(7, 26, 82, 0.9710259103641457) 0%,
+      rgba(7, 26, 82, 1) 10%,
+      rgba(7, 26, 82, 0) 45%,
+      rgba(7, 26, 82, 0) 100%
+    );
+    top: -10px;
+    z-index: -1;
+  }
+
+  @include min-md {
+    padding-top: 160px;
+  }
+
+  @include min-desktop {
+    padding-top: 220px;
+    padding-bottom: 220px;
+  }
+}
+
+.homepage--block-2 {
+  background-position: right center, center bottom;
+  background-repeat: no-repeat;
+  background-image: url('../../images/img--clould-background.webp'),
+    linear-gradient(
+      180deg,
+      rgba(234, 115, 93, 0) 0%,
+      rgba(234, 115, 93, 0.2) 75%,
+      rgba(234, 115, 93, 0.74) 100%
+    );
+  box-shadow: 0px 6px 27px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 186px 0;
+
+  @include min-md {
+    border-radius: 0px 0px 356px 0;
+  }
+}
+
+.homepage--block-4 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include min-md {
+    padding-top: 150px;
+  }
+
+  @include min-desktop {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+.homepage--block-5 {
+  .homepage--block {
+    max-width: 1024px;
+  }
+}
+
+.homepage--block-6 {
+  .homepage--block {
+    max-width: 1024px;
+  }
+}
+
+/** Block Hero image **/
+.homepage--hero-block {
+  will-change: transform;
+
+  &-wrapper {
+    @extend %posr;
+    height: 500px;
+
+    @include min-769 {
+      height: 85vh;
+    }
+  }
+
+  img {
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.hero-block {
+  &--background-gradient {
+    @extend %posa;
+    @include size(100%);
+    background: linear-gradient(
+      0deg,
+      rgba($color03, 1) 0%,
+      rgba($color03, 1) 6.5%,
+      rgba($color03, 0) 35%,
+      rgba($color03, 0) 100%
+    );
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+
+  &--text-wrapper {
+    @extend %posa;
+    bottom: 12%;
+    color: $color01;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    text-align: center;
+  }
+
+  &--title {
+    @include fz(28);
+    @extend .font3;
+    font-weight: 400;
+    text-shadow: 0 6px 12px rgb(0, 0, 0, 0.5);
+    text-transform: uppercase;
+
+    @include min-769 {
+      @include fz(42);
+    }
+
+    @include min-desktop {
+      @include fz(58);
+    }
+
+    &.medium {
+      @include min-769 {
+        @include fz(36);
+      }
+
+      @include min-desktop {
+        @include fz(52);
+      }
+    }
+  }
+
+  &--month {
+    @extend .font2;
+    @include fz(24);
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    margin: 15px auto 5px;
+
+    span {
+      @extend %posr;
+      display: inline-block;
+
+      &:after,
+      &:before {
+        @extend %posa;
+        @include size(70px 2px);
+        background-color: $color01;
+        content: '';
+        top: 8px;
+      }
+
+      &.color-yellow {
+        &:after,
+        &:before {
+          background-color: $color25;
+        }
+
+        color: $color25;
+      }
+
+      &:after {
+        left: -95px;
+      }
+
+      &:before {
+        right: -95px;
+      }
+    }
+
+    @include min-md {
+      @include fz(36);
+      margin: 30px auto 16px;
+
+      span {
+        &:after,
+        &:before {
+          @include size(100px 2px);
+          top: 18px;
+        }
+
+        &:after {
+          left: -130px;
+        }
+
+        &:before {
+          right: -130px;
+        }
+      }
+    }
+
+    @include min-769 {
+      @include fz(42);
+    }
+
+    @include min-desktop {
+      @include fz(55);
+    }
+
+    &.medium {
+      @include min-769 {
+        @include fz(36);
+      }
+
+      @include min-desktop {
+        @include fz(36);
+      }
+    }
+  }
+
+  &--whitelist-register {
+    @extend %animate;
+    @extend .use-gradient-01;
+    @include fz(18);
+    @include size(auto 56px);
+    @include onHoldAndScaleDown;
+    border-radius: 48px;
+    box-shadow: 0px 4px 39px -1px rgba(0, 0, 0, 0.25);
+    color: $color02;
+    display: inline-block;
+    line-height: 56px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-decoration: none;
+
+    &.hachathon {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      color: $color02;
+    }
+
+    @include min-md {
+      @include fz(25);
+      @include size(auto 76px);
+      border-radius: 60px;
+      line-height: 76px;
+      padding-left: 50px;
+      padding-right: 50px;
+
+      &.medium {
+        @include fz(20);
+        @include size(auto 60px);
+        line-height: 60px;
+      }
+    }
+
+    @include min-desktop {
+      @include fz(25);
+      @include size(auto 86px);
+      border-radius: 60px;
+      line-height: 86px;
+    }
+
+    @include large-desktop {
+      @include size(auto 96px);
+      line-height: 96px;
+    }
+  }
+}
+
+/** Block What is eggforce **/
+.block--what-is-eggforce {
+  background: linear-gradient(104.26deg, $grd01 0.86%, rgba(0, 0, 0, 0) 99.33%),
+    linear-gradient(104.78deg, $grd01 0.74%, rgba(255, 255, 255, 0) 100.89%);
+  box-shadow: 0px 4px 26px -1px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  border-radius: 30px;
+  padding: 32px;
+  margin-top: 60px;
+
+  p {
+    @include fz(16);
+  }
+
+  .col-image {
+    margin-bottom: 24px;
+  }
+
+  @include min-md {
+    padding: 42px;
+
+    .col-image {
+      margin-bottom: 0;
+    }
+
+    p {
+      @include fz(18);
+    }
+  }
+}
+
+/** Block The battle between Dragons **/
+.block--the-battle {
+  padding-top: 120px;
+  padding-bottom: 180px;
+}
+
+.homepage-block {
+  &--dragon {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &.left {
+      margin-bottom: 32px;
+    }
+
+    &.reverse {
+      @extend %posr;
+
+      .block-dragon {
+        &--image {
+          order: 2;
+        }
+
+        &--info {
+          order: 1;
+          margin-left: 0;
+          margin-right: 16px;
+
+          .heading {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .vertical-line {
+      @include hidden;
+      @extend %posa;
+    }
+
+    .block-dragon {
+      &--image {
+        @extend %animate;
+        flex: 1 1 0px;
+        width: auto;
+        max-width: 160px;
+
+        img {
+          display: block;
+          max-width: 100%;
+          margin-top: 36px;
+        }
+
+        @include min-desktop {
+          max-width: 200px;
+
+          &:hover {
+            transform: scale(0.99);
+          }
+        }
+      }
+
+      &--info {
+        @include fz(14);
+        text-align: center;
+        flex: 1 1 0px;
+        width: auto;
+        margin-left: 16px;
+
+        p {
+          @include fz(14);
+          text-align: left;
+
+          @include min-desktop {
+            @include fz(16);
+          }
+        }
+
+        .short-content {
+          @include min-md {
+            min-height: 210px;
+          }
+        }
+
+        @include min-desktop {
+          @include fz(18);
+        }
+      }
+    }
+
+    @include min-md {
+      &.left {
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+
+      &.right {
+        margin-left: 30px;
+      }
+
+      .vertical-line {
+        @include visible;
+        @include size(2px 100%);
+        background-color: $color07;
+        max-height: 200px;
+        right: calc(-30px - var(--bs-gutter-x) / 2 - 1px);
+        top: 36px;
+
+        .circle {
+          @include posa;
+          @include size(8px);
+          border-radius: 50%;
+          background-color: $color07;
+          left: -3px;
+
+          &.top {
+            top: 0;
+          }
+
+          &.bottom {
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Block NFT Utility **/
+
+.block--nft-utility {
+  padding-bottom: 0;
+
+  ul {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+
+    @include min-desktop {
+      margin: 0;
+    }
+  }
+
+  .heading.upper {
+    text-align: center;
+    margin-bottom: 24px;
+
+    @include min-md {
+      @include hidden;
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    max-width: 420px;
+  }
+
+  .nft-content--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .heading {
+      @include query-mobile {
+        @include hidden;
+      }
+    }
+  }
+
+  .nft-utility {
+    &--primary-wrapper {
+      @extend %posr;
+      display: flex;
+      justify-content: center;
+
+      .nft-benefit--point {
+        @extend %posa;
+        @include fz(14);
+        font-weight: 700;
+
+        &:after {
+          @extend %posa;
+          background-color: $color08;
+          content: '';
+
+          @include max-sm {
+            @include hidden;
+          }
+        }
+
+        &:after {
+          @include size(100% 2px);
+          bottom: -10px;
+          left: 0;
+        }
+
+        .pointer {
+          @extend %posa;
+          @include size(100% 2px);
+          background-color: $color08;
+
+          @include max-sm {
+            @include hidden;
+          }
+        }
+
+        .text {
+          @include max-sm {
+            @include hidden;
+          }
+        }
+
+        .point-pulse {
+          @include posa(10);
+        }
+      }
+
+      &.dragon-wrapper {
+        .nft-benefit--point {
+          &.point-1 {
+            @include size(360px auto);
+            left: -90px;
+            top: 12px;
+
+            .pointer {
+              @include size(124px 2px);
+              bottom: -124px;
+              right: -46px;
+              transform-origin: right center;
+              transform: rotate(68deg);
+            }
+
+            .point-pulse {
+              &.mobile {
+                left: 190px;
+                top: 90px;
+              }
+
+              &.desktop {
+                bottom: -3px;
+                right: -2px;
+              }
+            }
+
+            // Disable overflow
+            @include max-sm {
+              left: 0;
+              top: 0;
+            }
+
+            @include media-mm(576, 1240) {
+              width: 200px;
+              left: 65px;
+              top: 0;
+            }
+          }
+
+          &.point-2 {
+            @include size(280px auto);
+            top: 120px;
+            right: -190px;
+
+            .pointer {
+              @include size(100px 2px);
+              bottom: -10px;
+              left: 1px;
+              transform-origin: left center;
+              transform: rotate(120deg);
+
+              &:after {
+                top: -3px;
+                right: -2px;
+              }
+            }
+
+            .point-pulse {
+              &.mobile {
+                left: 170px;
+                top: 40px;
+              }
+
+              &.desktop {
+                bottom: -4px;
+                right: -2px;
+              }
+            }
+
+            // Disable overflow
+            @include max-sm {
+              right: 0;
+            }
+
+            @include media-mm(576, 1240) {
+              width: 160px;
+              right: -30px;
+            }
+          }
+
+          &.point-3 {
+            @include size(300px auto);
+            left: 100px;
+            bottom: 100px;
+
+            .pointer {
+              @include size(90px 2px);
+              bottom: -92px;
+              right: -38px;
+              transform-origin: right center;
+              transform: rotate(65deg);
+
+              &:after {
+                bottom: -5px;
+                right: -2px;
+              }
+            }
+
+            .point-pulse {
+              &.mobile {
+                left: 100px;
+                top: 10px;
+              }
+
+              &.desktop {
+                bottom: -3px;
+                right: -2px;
+              }
+            }
+
+            // Disable overflow
+            @include max-sm {
+              left: 0;
+            }
+
+            @include min-sm {
+              left: -155px;
+              bottom: 200px;
+            }
+
+            @include media-mm(576, 1240) {
+              width: 200px;
+              left: -25px;
+            }
+          }
+
+          &.point-4 {
+            @include size(280px auto);
+            bottom: 40px;
+            right: -140px;
+
+            .pointer {
+              @include size(100px 2px);
+              bottom: -10px;
+              left: 1px;
+              transform-origin: left center;
+              transform: rotate(-140deg);
+
+              &:after {
+                top: -3px;
+                right: -2px;
+              }
+            }
+
+            .point-pulse {
+              &.mobile {
+                left: 120px;
+                top: -35px;
+              }
+
+              &.desktop {
+                bottom: -4px;
+                right: -2px;
+              }
+            }
+
+            // Disable overflow
+            @include max-sm {
+              right: 0;
+            }
+
+            @include media-mm(576, 1240) {
+              width: 190px;
+              right: -30px;
+            }
+          }
+        }
+      }
+    }
+
+    &--primary-image {
+      @extend %posr;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include query-mobile {
+        overflow: hidden;
+      }
+    }
+
+    &--big-dragon {
+      display: block;
+      max-width: 336px;
+
+      @include query-mobile-small {
+        max-width: 320px;
+      }
+
+      @include min-sm {
+        max-width: 100%;
+      }
+
+      @include min-md {
+        max-width: 520px;
+      }
+    }
+  }
+}
+
+.nft-swiper--wrapper {
+  max-width: 86%;
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @include min-desktop {
+    max-width: 520px;
+    border-radius: 54px;
+  }
+}
+
+/** Block Be the legend **/
+.block--be-the-legend {
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  .content {
+    @extend %posr;
+    @include fz(35);
+    background-color: #071a52;
+    background-image: url('../../images/img--bg-egg.webp');
+    background-size: 100%;
+    border-radius: 20px;
+    box-shadow: 6px 17px 187px -1px rgba(255, 179, 86, 0.5);
+    opacity: 0.8;
+    padding: 100px 20px;
+    text-align: center;
+
+    &:after {
+      @include posa(2);
+      @include size(100%);
+      content: '';
+      left: 0;
+      top: 0;
+      border-radius: 21px;
+      background-color: $color03;
+      opacity: 0.85;
+    }
+
+    p,
+    .btn--start-now {
+      @extend %posr;
+      @include fz(18);
+      font-weight: 500;
+      z-index: 10;
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    @include query-mobile {
+      .btn--start-now {
+        &.sz-xxl {
+          min-height: 58px;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    @include min-md {
+      padding: 130px 80px;
+
+      p,
+      .btn--start-now {
+        @include fz(24);
+      }
+    }
+  }
+
+  @include min-md {
+    margin-top: 140px;
+  }
+}
+
+/** Block roadmap **/
+.block--roadmap-wrapper {
+  max-width: 100%;
+  transform: translateY(-90px);
+
+  @include query-mobile {
+    max-width: 90%;
+  }
+
+  @include min-desktop {
+    max-width: 1200px;
+  }
+}
+
+.block--roadmap {
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    @include min-md {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+/** Block Timeline **/
+.block--timeline {
+  &-root {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .heading {
+      margin-bottom: 30px;
+    }
+
+    @include query-timeline--horizontal {
+      max-width: 100%;
+
+      .heading {
+        margin-bottom: 60px;
+      }
+    }
+
+    .content {
+      @extend %posr;
+      padding-left: 30px;
+
+      &:after {
+        @extend %posa;
+        @include size(3px 100%);
+        content: '';
+        background: linear-gradient(
+          0deg,
+          $color08 0%,
+          $color07 32.28%,
+          $color06 66.65%,
+          $color05 99.98%
+        );
+        border-radius: 4px;
+        left: 0;
+        top: 0;
+      }
+
+      &:before {
+        @include posa;
+        @include size(24px);
+        content: '';
+        background-image: url('../../images/timeline--arrow.svg');
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        transform: rotate(90deg) translateY(-1px) translateX(3px);
+        margin-left: auto;
+        margin-right: auto;
+        left: -12px;
+        right: auto;
+        bottom: -10px;
+      }
+
+      @include query-timeline--vertical {
+        padding-left: 0;
+
+        &:after {
+          left: 50%;
+        }
+
+        &:before {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      @include query-timeline--horizontal {
+        display: flex;
+        flex-flow: row nowrap;
+
+        &:after {
+          @include size(100% 3px);
+          background: linear-gradient(
+            -90deg,
+            $color08 0%,
+            $color07 32.28%,
+            $color06 66.65%,
+            $color05 99.98%
+          );
+          top: auto;
+          bottom: 0;
+          margin: auto;
+        }
+
+        &:before {
+          bottom: -11px;
+          left: auto;
+          right: -4px;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  &-item {
+    @extend %posr;
+
+    & > .animate__animated {
+      height: 100%;
+      padding: 75px 0 30px;
+    }
+
+    color: $color01;
+    flex: 0 0 auto;
+
+    .block--timeline {
+      &--background {
+        @include posa(2);
+        @include size(100%);
+        transform: scale(1);
+      }
+
+      &--border-line {
+        @extend %posa;
+        @include size(100% 3px);
+        left: -30px;
+        top: 50px;
+
+        &:after {
+          @extend %posa;
+          @include size(10px);
+          border-radius: 50%;
+          content: '';
+          right: 0;
+          top: -3px;
+        }
+      }
+    }
+
+    &.phase {
+      &-1,
+      &-3 {
+        margin-left: auto;
+      }
+
+      &-1 {
+        .block--timeline--background {
+          background: radial-gradient(
+            circle,
+            rgba(150, 47, 144, 0.6) 0%,
+            rgba(63, 63, 63, 0) 60%
+          );
+        }
+
+        .block--timeline--border-line {
+          background-color: #bd4866;
+
+          &:after {
+            background-color: #bd4866;
+          }
+        }
+      }
+
+      &-2 {
+        .block--timeline--background {
+          background: radial-gradient(
+            circle,
+            rgba($color06, 0.25) 0%,
+            rgba(63, 63, 63, 0) 60%
+          );
+        }
+
+        .block--timeline--border-line {
+          background-color: #e56e5e;
+
+          &:after {
+            background-color: #e56e5e;
+          }
+        }
+      }
+
+      &-3 {
+        .block--timeline--background {
+          background: radial-gradient(
+            circle,
+            rgba($color07, 0.25) 0%,
+            rgba(63, 63, 63, 0) 60%
+          );
+        }
+
+        .block--timeline--border-line {
+          background-color: #f6985a;
+
+          &:after {
+            background-color: #f6985a;
+          }
+        }
+      }
+
+      &-4 {
+        .block--timeline--background {
+          background: radial-gradient(
+            circle,
+            rgba($color08, 0.2) 0%,
+            rgba(63, 63, 63, 0) 60%
+          );
+        }
+
+        .block--timeline--border-line {
+          background-color: #fecd61;
+
+          &:after {
+            background-color: #fecd61;
+          }
+        }
+      }
+    }
+
+    .subtitle {
+      @extend .font2;
+      @include fz(26);
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        @include fz(15);
+      }
+    }
+
+    @include query-timeline--vertical {
+      width: 50%;
+
+      & > .animate__animated {
+        padding: 55px 15px 30px 30px;
+      }
+
+      .block--timeline--border-line {
+        top: 36px;
+        left: 0;
+      }
+
+      &.phase {
+        &-2,
+        &-4 {
+          .block--timeline--border-line:after {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    @include query-timeline--horizontal {
+      & > .animate__animated {
+        padding: 0;
+      }
+
+      .block--timeline {
+        &--background {
+          transform: scale(1.5);
+        }
+
+        &--border-line {
+          @include size(3px 100%);
+          left: -30px;
+          top: 0;
+
+          &:after {
+            top: 0;
+            right: -3px;
+          }
+        }
+      }
+
+      &.phase {
+        &-2,
+        &-4 {
+          transform: translateX(-60px) translateY(calc(100% + 20px));
+          will-change: transform;
+
+          .block--timeline--border-line {
+            transform: translateY(-20px);
+            will-change: transform;
+
+            &:after {
+              bottom: 0;
+              right: -4px;
+              top: auto;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          @include fz(14);
+
+          &:not(:last-child) {
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+
+    @include query-timeline--horizontal-special {
+      ul {
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+/** Stuff **/
+.icon--arrow-right {
+  @include size(32px);
+  display: inline-block;
+  background-size: 32px 32px;
+  background-image: url('../../images/chevrons-right.svg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.btn--learn-more {
+  @include fz(16);
+  min-width: 190px;
+  margin-top: 16px;
+
+  @include min-md {
+    @include fz(18);
+  }
+}
+
+.btn--explore-more {
+  @include fz(15);
+  min-width: 176px;
+  margin: 24px auto 0;
+}
+
+.btn--start-now {
+  @include fz(20);
+  margin-top: 40px;
+  min-width: 188px;
+}
+
+.dragon-icon--swiper {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .dragon-icon--img {
+    &-wrapper {
+      max-width: 130px;
+    }
+
+    max-width: 100%;
+  }
+}
+
+.btn-pulse {
+  animation: pulse 2.5s infinite;
+}
+
+.nft-utility--mobile-modal {
+  .modal-header {
+    border-bottom-color: transparent;
+    padding-bottom: 0;
+    font-weight: 600;
+  }
+
+  .modal-content {
+    background: $color03;
+    font-weight: 500;
+  }
+}
+
+.point-pulse {
+  border-radius: 50%;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  background-color: $color08;
+  box-shadow: 0 0 0 0 $color08;
+
+  &.mobile {
+    @include size(16px);
+    border: 2px solid $color08;
+    cursor: pointer;
+  }
+
+  &.desktop {
+    @include size(12px);
+  }
+
+  @include min-sm {
+    &.mobile {
+      @include hidden;
+    }
+  }
+}

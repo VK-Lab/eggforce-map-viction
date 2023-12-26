@@ -1,0 +1,57 @@
+.event--happy-hour {
+  &--root {
+    margin-bottom: 24px;
+
+    .each-partner {
+      .logo-wrapper {
+        @include flexRow;
+        align-items: center;
+        background-color: rgba(255, 255, 255, .75);
+        border-radius: 12px;
+        height: 92px;
+        margin-bottom: 8px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .logo {
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .link-wrapper {
+        display: block;
+        text-decoration: none;
+      }
+
+      .text {
+        @include fz(14);
+        display: block;
+        font-weight: 500;
+        color: $color10;
+        text-align: center;
+      }
+    }
+  }
+
+  &--message {
+    margin-bottom: 12px !important;
+
+    strong {
+      color: $color12;
+    }
+  }
+
+  &--partners {
+    @include flexRow;
+    justify-content: space-between;
+    column-gap: 0.5%;
+
+    .each-partner {
+      flex: 0 0 auto;
+      width: 32%;
+    }
+  }
+}

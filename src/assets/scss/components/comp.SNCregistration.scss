@@ -1,0 +1,234 @@
+.snc-registration-result {
+  &.lucky-number-status-modal {
+    .modal-content {
+      background-image: url('../../images/bg--journey.jpeg');
+      background-size: cover;
+    }
+  }
+
+  .modal-content {
+    background-image: url('../../images/easter-hero-image--mobile.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .notification-modal--box {
+    background-color: rgba($modalBackground, 0.65);
+    backdrop-filter: blur(4px);
+    width: 96%;
+    min-height: 300px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .modal-dialog {
+    @include min-md {
+      max-width: 520px;
+    }
+
+    .icon {
+      @include fz(72);
+    }
+
+    .ef-button.close {
+      margin-top: 24px;
+      min-height: 30px;
+      font-size: 13px;
+      border-width: 2px;
+      width: 160px;
+    }
+
+    .helper {
+      text-align: center;
+      opacity: 0.9;
+
+      a {
+        color: $color08;
+      }
+    }
+
+    .btn--close-modal {
+      top: -6px;
+      right: 6px;
+    }
+  }
+
+  .confirm-code {
+    background-color: $modalBackground;
+    border-radius: 12px;
+    color: $color01;
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 12px;
+    margin: 16px auto 32px;
+    padding: 10px 20px;
+    text-align: center;
+    width: 280px;
+  }
+}
+
+.SNC-module--registration-modal {
+  .modal-content {
+    background-image: url('../../images/bg--snc.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    background-color: $color03;
+  }
+
+  &.lucky-number-modal {
+    .modal-content {
+      background-image: url('../../images/bg--journey.png');
+      background-size: cover;
+
+      .ginput--root {
+        background-color: #4a090d;
+        border-color: #3f080d;
+      }
+
+      .invalid-feedback {
+        color: $color25;
+      }
+    }
+  }
+}
+
+.snc-registration-form {
+  &--root {
+    @extend %posr;
+    border-radius: 12px;
+    max-width: 768px;
+    padding: 24px 8px;
+    background-color: $modalBackground;
+
+    &.is-modal {
+      background-color: transparent;
+    }
+
+    &:before {
+      @include posa;
+      content: '';
+      background-image: url('../../images/layer--coin-flying.png');
+      display: none;
+      visibility: hidden;
+      right: 0px;
+      top: -20px;
+      width: 320px;
+      height: 700px;
+      background-size: 120%;
+      background-repeat: no-repeat;
+      z-index: -1;
+
+      @include min-md {
+        transform: rotate(-15deg);
+        width: 550px;
+      }
+
+      @include min-desktop {
+        width: 850px;
+      }
+    }
+
+    &:after {
+      @include posa;
+      content: '';
+      background-image: url('../../images/layer--chest-SNC.png');
+      right: 0;
+      top: -60px;
+      width: 240px;
+      height: 283px;
+      background-size: 90%;
+      background-repeat: no-repeat;
+      z-index: -1;
+
+      @include min-md {
+        transform: rotate(-16deg);
+        right: -110px;
+        background-size: 90%;
+      }
+    }
+
+    @include min-md {
+      padding: 45px 16px;
+      margin: 0 auto;
+    }
+
+    .btn--snc-register {
+      margin-top: 24px;
+    }
+
+    .game-instruction.snc-airdrop {
+      @include fz(14);
+      padding: 36px 0 0;
+      margin-bottom: 0;
+
+      a {
+        color: $color08;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .field--wallet-address {
+      @extend %posr;
+
+      .use-current-key--button {
+        @extend %posa;
+        @include fz(14);
+        right: 20px;
+        top: 70px;
+      }
+    }
+  }
+}
+
+.logo--casper-blockchain {
+  position: fixed;
+  z-index: 10;
+  right: 24px;
+  top: 24px;
+  width: 96px;
+}
+
+.decor--header-snc {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  .image--decor.top {
+    margin-top: -36px;
+
+    @include min-md {
+      margin-top: -56px;
+    }
+  }
+
+  .decor--snc {
+    @include posr;
+    width: 52px;
+    margin: 0 auto;
+    display: block;
+
+    @include min-md {
+      width: 76px;
+    }
+  }
+}
+
+.snc-actions-button--wrapper {
+  display: flex;
+  column-gap: 12px;
+  justify-content: center;
+
+  .ef-button {
+    height: 40px;
+  }
+}

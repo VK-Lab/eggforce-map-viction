@@ -1,0 +1,87 @@
+/* Sizing shortcuts */
+/*--------------------------------------*/
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
+  @if is-size($height) {
+    height: $height;
+  } @else {
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin.";
+  }
+
+  @if is-size($width) {
+    width: $width;
+  } @else {
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin.";
+  }
+}
+
+@mixin posr($z: 1) {
+  position: relative;
+  z-index: $z;
+}
+
+@mixin posa($z: 10) {
+  position: absolute;
+  z-index: $z;
+}
+
+%posr {
+  @include posr;
+}
+
+%posa {
+  @include posa;
+}
+
+@mixin hidden() {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin visible($display: block) {
+  display: $display;
+  visibility: visible;
+}
+
+@mixin gradient01() {
+  background: linear-gradient(135deg, $color06 0%, $color08 100%);
+  box-shadow: 0px 0px 25px $color08;
+}
+
+@mixin gradient02() {
+  background: linear-gradient(135deg, $color06 0%, $color08 100%);
+}
+
+@mixin onHoldAndScaleDown() {
+  &:active:focus {
+    transform: scale(0.94);
+  }
+}
+
+@mixin flexRow() {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+@mixin flexCol() {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@mixin textShadow01() {
+  text-shadow: 3px 3px 1px $color03;
+}
+
+@mixin textShadow02() {
+  text-shadow: 3px 3px 1px #353535, 3px 3px 1px #353535, 3px 4px 2px #353535;
+}
+
+@mixin textShadow03() {
+  text-shadow: 0 6px 12px rgb(0, 0, 0, 0.25);
+}

@@ -1,0 +1,62 @@
+$color01: #fff;
+$color02: #000;
+$color03: #071a52;
+$color04: #6c2868;
+$color05: #b64168;
+$color06: #ea735d;
+$color07: #ffb356;
+$color08: #f9f871;
+
+$color09: #2d64af;
+$color10: #f6f6f6;
+$color11: #6c2830;
+$color12: #fbff36;
+$color13: #78b136;
+$color14: #1c2d5b;
+$color15: #192646;
+$color16: #db871f;
+$color17: #424963;
+$color18: #494949;
+$color19: #222a47;
+$color20: #4c61a1;
+$color21: #b1b1b1;
+$color22: #040e27;
+$color23: #1e243b;
+$color24: #16244d;
+$color25: #f0d390;
+// #0b1534
+
+$colorWater: #1a4aaf;
+$colorWaterHover: #00b6ff;
+$colorFire: #932013;
+$colorFireHover: #ff9f00;
+$colorEarth: #633e08;
+$colorEarthHover: #cca45e;
+$colorMetal: #b6aca7;
+$colorMetalHover: #dadada;
+$colorWood: #2d9c43;
+$colorWoodHover: #81e50a;
+
+$modalBackground: #0c1839;
+
+$grd01: rgba(255, 255, 255, 0.1);
+
+// Preset box-shadow
+$bs01: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+  rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+$bs02: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+  rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+  rgba(0, 0, 0, 0.09) 0px 32px 16px;
+$bs03: 0px 0px 25px -1px $color08;
+$bs04: 0px 0px 25px -1px $color10;
+$bs05: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+// Typography Font Families
+$font1: 'Montserrat', sans-serif;
+$font2: 'Baloo Bhaina 2', cursive;
+$font3: 'Oswald', sans-serif;
+
+$maxHeaderFooterContainer: 1920px;
+$logoPrimary: '../../images/eggforce--logo__ver2_color.webp';
+
+$dragonSize: 420px;

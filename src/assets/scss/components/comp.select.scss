@@ -1,0 +1,44 @@
+.react-select {
+  &--root {
+    color: $color10;
+
+    .react-select {
+      &--control {
+        box-shadow: $bs05;
+        background-color: $modalBackground;
+        border-color: $modalBackground;
+        border-width: 2px;
+        padding: 6px;
+
+        .single-value {
+          color: $color10;
+        }
+
+        &:hover {
+          border-color: $color20;
+        }
+
+        @include query-mobile {
+          padding: 2px 6px;
+        }
+      }
+
+      &--menu {
+        background-color: $modalBackground;
+        color: $color10;
+      }
+    }
+  }
+}
+
+.tag--full {
+  @include fz(11);
+  font-weight: 600;
+  margin-left: 8px;
+  background-color: $color05;
+  color: $color10;
+  padding: 1px 8px;
+  line-height: 1;
+  border-radius: 16px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,64 @@
+.happy-hour-modal {
+  &--root {
+    .modal-header,
+    .modal-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    @at-root .gmodal--root#{&} {
+      .modal-content {
+        // background-image: url('../../images/easter-hero-image--mobile.png');
+        background-image: url('../../short-terms/whitelist--mobile.png');
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+      }
+    }
+
+    .modal-body {
+      @include posr;
+      padding: 0;
+      text-align: center;
+    }
+
+    .body {
+      @include posr(5);
+      backdrop-filter: blur(1px);
+
+      .link--ama-event {
+        margin-bottom: 30px;
+        min-height: 42px;
+        text-transform: uppercase;
+        width: 260px;
+      }
+    }
+
+    .content {
+      background-color: rgba($modalBackground, 0.25);
+      padding: 46px 16px 16px;
+      padding-bottom: 60px;
+      margin-top: 0;
+
+      strong {
+        color: $color08;
+      }
+    }
+
+    .happy-hour--bottom-gradient {
+      @include posa(1);
+      @include size(100% 80%);
+      background: rgb(12, 24, 57);
+      background: linear-gradient(
+        180deg,
+        rgba(12, 24, 57, 0) 0%,
+        rgba(12, 24, 57, 0) 5%,
+        rgba(12, 24, 57, 0.908000700280112) 65%,
+        rgba(12, 24, 57, 1) 77%,
+        rgba(12, 24, 57, 1) 100%
+      );
+      bottom: 0;
+    }
+  }
+}
